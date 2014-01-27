@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 400;
 	line-height: 1.1;
 	margin-bottom: .8em;
-        font-family: "Segoe UI", "Microsoft YaHei", serif;
+        font-family: "Arial", "Microsoft YaHei", sans-serif;
 }
 
 h3, h4, h5, h6 { margin-top: .8em; }
@@ -225,7 +225,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 	Featured
 *****************/
 #featured {
-	background: #CCCC99;
+	background: #FFFFCC;
 	margin-bottom: 2em;
 	overflow: hidden;
 	padding: 20px;
@@ -254,7 +254,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 	Body
 *****************/
 #content {
-	background: #CCCC99;
+	background: #FFFF99;
 	margin-bottom: 2em;
 	overflow: hidden;
 	padding: 20px 20px;
