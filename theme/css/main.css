@@ -17,10 +17,10 @@
 /***** Global *****/
 /* Body */
 body {
-    background: #F5F4EF;
+    background: url("theme/images/icons/background.gif");
     color: #000305;
     font-size: 87.5%; /* Base font size: 14px */
-    font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: "Microsoft YaHei", "Arial", sans-serif;
     line-height: 1.429;
     margin: 0;
     padding: 0;
@@ -28,24 +28,25 @@ body {
 }
 
 /* Headings */
-h1 {font-size: 2em }
-h2 {font-size: 1.571em}	/* 22px */
+h1 {font-size: 1.857em}
+h2 {font-size: 1.714em}	/* 24px */
 h3 {font-size: 1.429em}	/* 20px */
 h4 {font-size: 1.286em}	/* 18px */
 h5 {font-size: 1.143em}	/* 16px */
-h6 {font-size: 1em}		/* 14px */
+h6 {font-size: 1em}     /* 14px */
 
-h2 {color: #003366}
-h3 {color: #336699}
+h1 {color: #d75f2d}
+h2 {color: #d05c2c}
+h3 {color: #d05c2c}
 
 h1, h2, h3, h4, h5, h6 {
-	font-weight: 400;
+	font-weight: normal;
 	line-height: 1.1;
 	margin-bottom: .8em;
-        font-family: "Arial", "Microsoft YaHei", sans-serif;
+        font-family: "Microsoft YaHei", "Arial", sans-serif;
 }
 
-h3, h4, h5, h6 { margin-top: .8em; }
+h2, h3, h4, h5, h6 { margin-top: .8em; }
 	
 hr { border: 2px solid #EEEEEE; }
 
@@ -53,13 +54,12 @@ hr { border: 2px solid #EEEEEE; }
 a {outline: 0;}
 a img {border: 0px; text-decoration: none;}
 a:link, a:visited {
-	color: #C74350;
+	color: #39aca0;
 	padding: 0 1px;
-	text-decoration: underline;
+	text-decoration: none;
 }
 a:hover, a:active {
-	background-color: #C74350;
-	color: #fff;
+	color: #d05c2c;
 	text-decoration: none;
 	text-shadow: 1px 1px 1px #333;
 }
@@ -225,7 +225,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 	Featured
 *****************/
 #featured {
-	background: #FFFFCC;
+	background: rgba(255,255,255,.3);
 	margin-bottom: 2em;
 	overflow: hidden;
 	padding: 20px;
@@ -244,17 +244,11 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 }
 #featured figure img {display: block; float: right;}
 
-#featured h2 {color: #C74451; font-size: 1.714em; margin-bottom: 0.333em;}
-#featured h3 {font-size: 1.429em; margin-bottom: .5em;}
-
-#featured h3 a:link, #featured h3 a:visited {color: #000305; text-decoration: none;}
-#featured h3 a:hover, #featured h3 a:active {color: #fff;}
-
 /*
 	Body
 *****************/
 #content {
-	background: #FFFF99;
+	background: rgba(255,255,255,.3);
 	margin-bottom: 2em;
 	overflow: hidden;
 	padding: 20px 20px;
