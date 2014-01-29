@@ -37,7 +37,7 @@ h6 {font-size: 1em}     /* 14px */
 
 h1 {color: #d75f2d}
 h2 {color: #336699}
-h3 {color: #99CCCC}
+h3 {background: #99CCCC ; color: #FFFFFF}
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
