@@ -17,7 +17,7 @@
 /***** Global *****/
 /* Body */
 body {
-    background: url("../images/icons/background.gif");
+    background: #FFFFCC;
     color: #000305;
     font-size: 87.5%; /* Base font size: 14px */
     font-family: "Microsoft YaHei", "Arial", sans-serif;
@@ -36,8 +36,8 @@ h5 {font-size: 1.143em}	/* 16px */
 h6 {font-size: 1em}     /* 14px */
 
 h1 {color: #d75f2d}
-h2 {color: #d05c2c}
-h3 {color: #d05c2c}
+h2 {color: #336699}
+h3 {color: #99CCCC}
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
