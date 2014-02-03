@@ -12,7 +12,7 @@
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="/">sorayNg OPTimized (NOPT) </a></h1>
+                <h1><a href="/">sorayNg OPTimized </a></h1>
                 <nav><ul>
                     <li class="active"><a href="/category/toys.html">Toys</a></li>
                 </ul></nav>
@@ -21,7 +21,7 @@
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="/tutorial-for-writing-blogs-using-pelican-hosted-on-github.html" rel="bookmark"
+        <a href="/toys/tutorial-for-writing-blogs-using-pelican-hosted-on-github.html" rel="bookmark"
            title="Permalink to Windows下使用Pelican搭建静态博客以及Github托管">Windows下使用Pelican搭建静态博客以及Github托管</a></h1>
     </header>
 
@@ -76,7 +76,7 @@
 </ol>
 <p>下面将分别介绍每个步骤。</p>
 <h2>在自己的电脑上安装Pelican</h2>
-<p>这里推荐一个比较快捷的安装流程（其他的安装方法可以<a href="http://docs.getpelican.com/en/3.3.0/getting_started.html#installing-pelican">参考这里</a>），即：</p>
+<p>由于Pelican是使用Python开发的，所以安装Pelican之前需要安装Python和相应的依赖包。这里推荐一个比较快捷的安装流程（其他的安装方法可以<a href="http://docs.getpelican.com/en/3.3.0/getting_started.html#installing-pelican">参考这里</a>），即：</p>
 <p>安装Python ---&gt; 安装pip ---&gt; 安装Pelican [---&gt; 可选安装Python\Markdown]</p>
 <h3>安装Python</h3>
 <p>去<a href="http://python.org/download/">Python的官方下载页面</a>下载并安装Python。我目前使用的版本是Python 3.3.3。在使用中感觉Pelican对Python 3.x版本的支持良好。</p>
@@ -94,8 +94,6 @@
                         <h2>blogroll</h2>
                         <ul>
                             <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
                             <li><a href="#">You can modify those links in your config file</a></li>
                         </ul>
                 </div><!-- /.blogroll -->
@@ -103,7 +101,7 @@
                         <h2>social</h2>
                         <ul>
 
-                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="https://github.com/sorayng/">GitHub</a></li>
                             <li><a href="#">Another social link</a></li>
                         </ul>
                 </div><!-- /.social -->
@@ -117,5 +115,14 @@
                 <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
         </footer><!-- /#contentinfo -->
 
+<script type="text/javascript">
+    var disqus_shortname = 'sorayng-gh';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
 </body>
 </html>
