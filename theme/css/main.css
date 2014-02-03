@@ -12,7 +12,6 @@
 @import url("reset.css");
 @import url("pygment.css");
 @import url("typogrify.css");
-@import url(//fonts.googleapis.com/css?family=Yanone+Kaffeesatz&subset=latin);
 
 /***** Global *****/
 /* Body */
@@ -28,22 +27,17 @@ body {
 }
 
 /* Headings */
-h1 {font-size: 1.857em}
-h2 {font-size: 1.714em}	/* 24px */
-h3 {font-size: 1.429em}	/* 20px */
-h4 {font-size: 1.286em}	/* 18px */
-h5 {font-size: 1.143em}	/* 16px */
-h6 {font-size: 1em}     /* 14px */
-
-h1 {color: #d75f2d}
-h2 {color: #336699}
-h3 {color: #0066CC}
+h1 {font-size: 1.857em}                     /* 26px */
+h2 {font-size: 1.714em; color: #336699;}	/* 24px */
+h3 {font-size: 1.429em; color: #0066CC;}	/* 20px */
+h4 {font-size: 1.286em}	                    /* 18px */
+h5 {font-size: 1.143em}	                    /* 16px */
+h6 {font-size: 1em}                         /* 14px */
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 	line-height: 1.1;
 	margin-bottom: .8em;
-        font-family: "Microsoft YaHei", "Arial", sans-serif;
 }
 
 h2, h3, h4, h5, h6 { margin-top: .8em; }
@@ -63,17 +57,20 @@ a:hover, a:active {
 	background: #0077dd;
 	color: #FFFFFF;
 	text-decoration: none;
-	text-shadow: 1px 1px 1px #333;
 }
 
-h1 a:hover {
-    background-color: inherit
+h1 a:link, h1 a:visited {
+	background: none;
+	color: #000305;
+	padding: 0 1px;
+}
+h1 a:hover, h1 a:active {
+	background: none;
+	color: #FF9900;
 }
 	
 /* Paragraphs */
-div.line-block,
-p { margin-top: 1em;
-    margin-bottom: 1em;}
+div.line-block, p { margin-top: 1em; margin-bottom: 1em;}
 
 strong, b {font-weight: bold;}
 em, i {font-style: italic;}
@@ -108,7 +105,7 @@ dl {margin: 0 0 1.5em 0;}
 dt {font-weight: bold;}
 dd {margin-left: 1.5em;}
 
-pre{background-color:  rgb(238, 238, 238); padding: 10px; margin: 10px; overflow: auto;}
+pre {background-color:  rgb(238, 238, 238); padding: 10px; margin: 10px; overflow: auto;}
 
 /* Quotes */
 blockquote {
@@ -169,13 +166,12 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 		color: #000305;
 		display: block;
 		font-weight: bold;
-		margin: 0 0 .6em .2em;
+		margin: 0 0 1em .2em;
 		text-decoration: none;
 	}
 	#banner h1 a:hover, #banner h1 a:active {
 		background: none;
 		color: #FF9900;
-		text-shadow: none;
 	}
 	
 	#banner h1 strong {font-size: 0.36em; font-weight: normal;}
@@ -251,7 +247,7 @@ img.left, figure.left {float: left; margin: 0 2em 2em 0;}
 	Body
 *****************/
 #content {
-	background: #FFFFFF;
+	background: rgba(255,255,255,.3);
 	margin-bottom: 2em;
 	overflow: hidden;
 	padding: 20px 20px;
