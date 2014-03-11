@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>sorayNg OPTimized - sorayng</title>
+        <title>MILP的Benders分解方法</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
 
         <!--[if IE]>
@@ -14,14 +14,19 @@
         <header id="banner" class="body">
                 <h1><a href="/">sorayNg OPTimized </a></h1>
                 <nav><ul>
-                    <li><a href="/category/optimization.html">Optimization</a></li>
+                    <li class="active"><a href="/category/optimization.html">Optimization</a></li>
                     <li><a href="/category/toys.html">Toys</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/optimization/Benders-decomposition-for-MILP.html" rel="bookmark"
+           title="Permalink to MILP的Benders分解方法">MILP的Benders分解方法</a></h1>
+    </header>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/optimization/Benders-decomposition-for-MILP.html">MILP的Benders分解方法</a></h1>
+    <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2014-03-11T09:46:00">
                 周二 11 三月 2014
@@ -32,7 +37,7 @@
         </address>
 <p>In <a href="/category/optimization.html">Optimization</a>. </p>
 <p>tags: <a href="/tag/milp.html">MILP</a><a href="/tag/decomposition.html">decomposition</a></p>
-</footer><!-- /.post-info --><p>Benders分解（Benders Decomposition）是一种常用的数学规划问题分解方法，由Jacques F. Benders提出。这里我们尝试用这种方法求解混合整数线性规划（MILP）。</p>
+</footer><!-- /.post-info -->      <p>Benders分解（Benders Decomposition）是一种常用的数学规划问题分解方法，由Jacques F. Benders提出。这里我们尝试用这种方法求解混合整数线性规划（MILP）。</p>
 <p>假设待求解的MILP问题如下：</p>
 <p>$min c^Tx + f^Ty$<br />
 $s.t. Ax + By \geq b$</p>
@@ -66,61 +71,11 @@ $s.t. Ax + By \geq b$</p>
         (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
     }
 </script>
-<p>There are <a href="/optimization/Benders-decomposition-for-MILP.html#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/toys/tutorial-for-writing-blogs-using-pelican-hosted-on-github.html" rel="bookmark"
-                           title="Permalink to Windows下使用Pelican搭建静态博客以及Github托管">Windows下使用Pelican搭建静态博客以及Github托管</a></h1>
-                </header>
+    </div><!-- /.entry-content -->
 
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2014-01-23T10:27:00">
-                周四 23 一月 2014
-        </abbr>
-
-        <address class="vcard author">
-                By <a class="url fn" href="/author/sorayng.html">sorayng</a>
-        </address>
-<p>In <a href="/category/toys.html">Toys</a>. </p>
-<p>tags: <a href="/tag/pelican.html">Pelican</a><a href="/tag/github.html">Github</a></p>
-</footer><!-- /.post-info -->                <p>Pelican搭建静态博客简明教程</p>
-                <a class="readmore" href="/toys/tutorial-for-writing-blogs-using-pelican-hosted-on-github.html">read more</a>
-<p>There are <a href="/toys/tutorial-for-writing-blogs-using-pelican-hosted-on-github.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/toys/hello-world.html" rel="bookmark"
-                           title="Permalink to Hello World">Hello World</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2014-01-22T17:30:00">
-                周三 22 一月 2014
-        </abbr>
-
-        <address class="vcard author">
-                By <a class="url fn" href="/author/sorayng.html">sorayng</a>
-        </address>
-<p>In <a href="/category/toys.html">Toys</a>. </p>
-<p>tags: <a href="/tag/pelican.html">Pelican</a><a href="/tag/github.html">Github</a></p>
-</footer><!-- /.post-info -->                <p>Hello World on my GitHub Blog</p>
-                <a class="readmore" href="/toys/hello-world.html">read more</a>
-<p>There are <a href="/toys/hello-world.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-            </ol><!-- /#posts-list -->
-<p class="paginator">
-    Page 1 / 1
-</p>
-            </section><!-- /#content -->
+  </article>
+</section>
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>blogroll</h2>
