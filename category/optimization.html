@@ -21,22 +21,31 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/optimization/Benders-decomposition-for-MILP.html">MILP的Benders分解方法</a></h1>
+                    <h1 class="entry-title"><a href="/optimization/duality-in-linear-programming.html">线性规划的对偶问题</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2014-03-11T09:46:00">
-                周二 11 三月 2014
+        <abbr class="published" title="2014-03-12T14:33:00">
+                周三 12 三月 2014
         </abbr>
 
         <address class="vcard author">
                 By <a class="url fn" href="/author/sorayng.html">sorayng</a>
         </address>
 <p>In <a href="/category/optimization.html">Optimization</a>. </p>
-<p>tags: <a href="/tag/milp.html">MILP</a><a href="/tag/decomposition.html">decomposition</a></p>
-</footer><!-- /.post-info --><p>Benders分解（Benders Decomposition）是一种常用的数学规划问题分解方法，由Jacques F. Benders提出。这里我们尝试用这种方法求解混合整数线性规划（MILP）。</p>
-<p>假设待求解的MILP问题如下：</p>
-<p>$min c^Tx + f^Ty$<br />
-$s.t. Ax + By \geq b$</p>
-<p>其中，x为连续变量，y为二元变量。</p><script type= "text/javascript">
+<p>tags: <a href="/tag/lp.html">LP</a><a href="/tag/dual.html">dual</a></p>
+</footer><!-- /.post-info --><p>首先我们观察一个线性规划问题：</p>
+<p>$max \cbox{ } c^Tx$<br />
+$s.t.\cbox{ } Ax \leq b$<br />
+$x \geq 0$</p>
+<p>其中，A是一个m*n矩阵，b是一个m维向量，$c^T$和$x$均为n维向量。对于这个问题，可以这样理解：</p>
+<p>我们拥有m种资源，它们的量分别为b_j，这些资源可以用于生产n种产品，生产这些产品的利润分别为c，生产第j种产品需要消耗资源i的量为Aij，在有限的资源条件下，达到最大化的利润，需要确定最佳的产品组合方案。</p>
+<p>如果我们不再想生产，而是直接卖出这些资源，那么如何来定价呢？</p>
+<p>要考虑两点问题：
++ 不能比自己生产亏
++ 为了使人容易接受，应尽可能小</p>
+<p>$min \cbox{ } u^Tb$<br />
+$s.t.\cbox{ } A^Tx \geq c$<br />
+$u \geq 0$</p>
+<p>这样可以确定这些资源的定价，这些价格</p><script type= "text/javascript">
     if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
         var mathjaxscript = document.createElement('script');
         mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
@@ -66,12 +75,38 @@ $s.t. Ax + By \geq b$</p>
         (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
     }
 </script>
-<p>There are <a href="/optimization/Benders-decomposition-for-MILP.html#disqus_thread">comments</a>.</p>                </article>
+<p>There are <a href="/optimization/duality-in-linear-programming.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/optimization/Benders-decomposition-for-MILP.html" rel="bookmark"
+                           title="Permalink to MILP的Benders分解方法">MILP的Benders分解方法</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-03-11T09:46:00">
+                周二 11 三月 2014
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="/author/sorayng.html">sorayng</a>
+        </address>
+<p>In <a href="/category/optimization.html">Optimization</a>. </p>
+<p>tags: <a href="/tag/milp.html">MILP</a><a href="/tag/decomposition.html">decomposition</a></p>
+</footer><!-- /.post-info -->                <p>介绍混合整数线性规划（MILP）的Benders分解方法</p>
+                <a class="readmore" href="/optimization/Benders-decomposition-for-MILP.html">read more</a>
+<p>There are <a href="/optimization/Benders-decomposition-for-MILP.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
+            </ol><!-- /#posts-list -->
 <p class="paginator">
     Page 1 / 1
 </p>
-            </aside><!-- /#featured -->
-            </ol><!-- /#posts-list -->
             </section><!-- /#content -->
         <section id="extras" class="body">
                 <div class="blogroll">
