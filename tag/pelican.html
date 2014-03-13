@@ -38,11 +38,41 @@
 <p>PLUGINS = ['render_math']</p>
 <p>在使用中可能还需要根据具体情况指定Pelican的插件文件夹位置：</p>
 <p>PLUGIN_PATH = 'path/to/pelican-plugins'</p>
-<p><code>PLUGIN_PATH</code>可以是绝对路径，也可以是对于Pelican配置文件的相对路径。</p>
+<p>PLUGIN_PATH可以是绝对路径，也可以是对于Pelican配置文件的相对路径。</p>
 <p>如果在文章内输入：</p>
 <p><code>Re = \frac{Du\rho}{\eta}</code></p>
 <p>则会显示为：</p>
-<p>$Re = \frac{Du\rho}{\eta}$</p><p>There are <a href="/toys/math-rendering-in-pelican.html#disqus_thread">comments</a>.</p>                </article>
+<p>$Re = \frac{Du\rho}{\eta}$</p><script type= "text/javascript">
+    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+        var mathjaxscript = document.createElement('script');
+        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+        mathjaxscript.type = 'text/javascript';
+        mathjaxscript.src = 'https:' == document.location.protocol
+                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+            "MathJax.Hub.Config({" +
+            "    config: ['MMLorHTML.js']," +
+            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+            "    displayAlign: 'center'," +
+            "    displayIndent: '0em'," +
+            "    showMathMenu: true," +
+            "    tex2jax: { " +
+            "        inlineMath: [ ['$','$'] ], " +
+            "        displayMath: [ ['$$','$$'] ]," +
+            "        processEscapes: true," +
+            "        preview: 'TeX'," +
+            "    }, " +
+            "    'HTML-CSS': { " +
+            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+            "    } " +
+            "}); ";
+        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+    }
+</script>
+<p>There are <a href="/toys/math-rendering-in-pelican.html#disqus_thread">comments</a>.</p>                </article>
             </aside><!-- /#featured -->
                 <section id="content" class="body">
                     <h1>Other articles</h1>
