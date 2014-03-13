@@ -38,7 +38,7 @@
 <p>In <a href="/category/toys.html">Toys</a>. </p>
 <p>tags: <a href="/tag/pelican.html">Pelican</a></p>
 </footer><!-- /.post-info -->      <p>在写作技术类文章时，经常会碰到公式，Pelican本身并不提供对公式的渲染功能。不过Pelican从3.0版本开始支持插件，到目前为止，已经形成了良好的生态圈，插件数量有数十种。这些插件均托管在<a href="https://github.com/getpelican/pelican-plugins">pelican-plugins</a>项目中。</p>
-<p>为了在页面中渲染数学公式，可以直接使用<a href="https://github.com/getpelican/pelican-plugins/tree/master/render_math">render_math</a>插件。这款插件可以通过<a href="http://www.mathjax.org/">MathJax</a>将页面中的LaTex或MathML渲染出来。在撰写文章时，包裹在$...$或$$...$$中的内容将会被识别为LaTex公式并进行渲染。</p>
+<p>为了在页面中渲染数学公式，可以直接使用<a href="https://github.com/getpelican/pelican-plugins/tree/master/render_math">render_math</a>插件。这款插件可以通过<a href="http://www.mathjax.org/">MathJax</a>将页面中的LaTex或MathML渲染出来。在撰写文章时，包裹在\$...\$或\$\$...\$\$中的内容将会被识别为LaTex公式并进行渲染。</p>
 <p>render_math的安装使用非常简单，只要将其文件放入Pelican的插件文件夹中，并在Pelican的配置文件中加入下面这行语句就可以了：</p>
 <p>PLUGINS = ['render_math']</p>
 <p>在使用中可能还需要根据具体情况指定Pelican的插件文件夹位置：</p>
