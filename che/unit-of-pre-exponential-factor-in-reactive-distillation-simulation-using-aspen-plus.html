@@ -46,7 +46,7 @@
 <p>如果$n$为0，则进一步退化为标准的Arrhenius方程。</p>
 <p>而化学反应速率通过下式来计算：</p>
 <p>$$r = k\prod_i[C_i]^{\alpha_i}$$</p>
-<p>上面的式子中，反应速率$r$的单位为$kmol/(s \cdot (holdup\,unit))$，$[C_i]$的单位取决于在<code>Reactions</code>中指定的<code>[Ci] basis</code>。而在Arrhenius方程中，由于Boltzmann因子项是无量纲的，反应速率的单位取决于指前因子和温度项。因此在输入指前因子的数值前，应当根据以上几个方程先确定反应速率$r$的单位，再除以浓度幂的单位以及温度项的单位，得到正确的指前因子单位，然后与动力学数据的文献核对是否一致。这里特别需要注意的一点就是，反应速率的单位是与持液量（Holdups）的单位有关的。</p><script type= "text/javascript">
+<p>上面的式子中，反应速率$r$的单位为$kmol/(s \cdot (holdup \ unit))$，$[C_i]$的单位取决于在<code>Reactions</code>中指定的<code>[Ci] basis</code>。而在Arrhenius方程中，由于Boltzmann因子项是无量纲的，反应速率的单位取决于指前因子和温度项。因此在输入指前因子的数值前，应当根据以上几个方程先确定反应速率$r$的单位，再除以浓度幂的单位以及温度项的单位，得到正确的指前因子单位，然后与动力学数据的文献核对是否一致。这里特别需要注意的一点就是，反应速率的单位是与持液量（Holdups）的单位有关的。</p><script type= "text/javascript">
     if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
         var mathjaxscript = document.createElement('script');
         mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
