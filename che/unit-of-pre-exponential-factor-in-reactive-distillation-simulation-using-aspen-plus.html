@@ -40,13 +40,13 @@
 <p>tags: <a href="http://sorayng.github.io/tag/aspen-plus.html">Aspen Plus</a><a href="http://sorayng.github.io/tag/reactive-distillation.html">Reactive Distillation</a></p>
 </footer><!-- /.post-info -->      <p>在使用Aspen Plus进行反应精馏模拟时，一个需要特别注意的地方是指前因子的单位问题。</p>
 <p>Aspen Plus内部的反应速率方程形式是扩展的Arrhenius方程，即：</p>
-<p>$$k = k_0(\frac{T}{T_0})^n exp{-(E_a/R)(1/T-1/T_0)}$$</p>
+<p>$$k = k_0(\frac{T}{T_0})^n \exp{-(E_a/R)(1/T-1/T_0)}$$</p>
 <p>如果未指定$T_0$的值，则上式简化为：</p>
-<p>$$k = k_0T^n exp{-\frac{E_a}{RT}}$$</p>
+<p>$$k = k_0T^n \exp{-\frac{E_a}{RT}}$$</p>
 <p>如果$n$为0，则进一步退化为标准的Arrhenius方程。</p>
 <p>而化学反应速率通过下式来计算：</p>
 <p>$$r = k\prod_i[C_i]^{\alpha_i}$$</p>
-<p>上面的式子中，反应速率$r$的单位为$kmol/(s \cdot (holdup unit))$，$[C_i]$的单位取决于在<code>Reactions</code>中指定的<code>[Ci] basis</code>。而在Arrhenius方程中，由于Boltzmann因子项是无量纲的，反应速率的单位取决于指前因子和温度项。因此在输入指前因子的数值前，应当根据以上几个方程先确定反应速率$r$的单位，再除以浓度幂的单位以及温度项的单位，得到正确的指前因子单位，然后与动力学数据的文献核对是否一致。这里特别需要注意的一点就是，反应速率的单位是与持液量（Holdups）的单位有关的。</p><script type= "text/javascript">
+<p>上面的式子中，反应速率$r$的单位为$kmol/(s \cdot (holdup\,unit))$，$[C_i]$的单位取决于在<code>Reactions</code>中指定的<code>[Ci] basis</code>。而在Arrhenius方程中，由于Boltzmann因子项是无量纲的，反应速率的单位取决于指前因子和温度项。因此在输入指前因子的数值前，应当根据以上几个方程先确定反应速率$r$的单位，再除以浓度幂的单位以及温度项的单位，得到正确的指前因子单位，然后与动力学数据的文献核对是否一致。这里特别需要注意的一点就是，反应速率的单位是与持液量（Holdups）的单位有关的。</p><script type= "text/javascript">
     if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
         var mathjaxscript = document.createElement('script');
         mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
