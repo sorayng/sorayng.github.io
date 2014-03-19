@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <title>sorayNg OPTimized</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
+        <link rel="stylesheet" href="http://sorayng.github.io/theme/css/main.css" />
 
         <!--[if IE]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -12,37 +12,36 @@
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="/">sorayNg OPTimized </a></h1>
+                <h1><a href="http://sorayng.github.io/">sorayNg OPTimized  <strong>Life is Non-OPTimal.</strong></a></h1>
                 <nav><ul>
-                    <li><a href="/category/optimization.html">Optimization</a></li>
-                    <li><a href="/category/toys.html">Toys</a></li>
+                    <li><a href="http://sorayng.github.io/category/che.html">ChE</a></li>
+                    <li><a href="http://sorayng.github.io/category/optimization.html">Optimization</a></li>
+                    <li><a href="http://sorayng.github.io/category/toys.html">Toys</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="/toys/math-rendering-in-pelican.html">Pelican下渲染数学公式</a></h1>
+                    <h1 class="entry-title"><a href="http://sorayng.github.io/che/unit-of-pre-exponential-factor-in-reactive-distillation-simulation-using-aspen-plus.html">Aspen Plus反应精馏模拟中指前因子的单位问题</a></h1>
 <footer class="post-info">
-        <abbr class="published" title="2014-03-12T16:28:00">
-                周三 12 三月 2014
+        <abbr class="published" title="2014-03-17T12:32:00">
+                周一 17 三月 2014
         </abbr>
 
         <address class="vcard author">
-                By <a class="url fn" href="/author/sorayng.html">sorayng</a>
+                By <a class="url fn" href="http://sorayng.github.io/author/sorayng.html">sorayng</a>
         </address>
-<p>In <a href="/category/toys.html">Toys</a>. </p>
-<p>tags: <a href="/tag/pelican.html">Pelican</a></p>
-</footer><!-- /.post-info --><p>在写作技术类文章时，经常会碰到公式，Pelican本身并不提供对公式的渲染功能。不过Pelican从3.0版本开始支持插件，到目前为止，已经形成了良好的生态圈，插件数量有数十种。这些插件均托管在<a href="https://github.com/getpelican/pelican-plugins">pelican-plugins</a>项目中。</p>
-<p>为了在页面中渲染数学公式，可以直接使用<a href="https://github.com/getpelican/pelican-plugins/tree/master/render_math">render_math</a>插件。这款插件可以通过<a href="http://www.mathjax.org/">MathJax</a>将页面中的LaTex或MathML渲染出来。在撰写文章时，包裹在\$...\$或\$\$...\$\$中的内容将会被识别为LaTex公式并进行渲染。</p>
-<p>render_math的安装使用非常简单，只要将其文件放入Pelican的插件文件夹中，并在Pelican的配置文件中加入下面这行语句就可以了：</p>
-<p>PLUGINS = ['render_math']</p>
-<p>在使用中可能还需要根据具体情况指定Pelican的插件文件夹位置：</p>
-<p>PLUGIN_PATH = 'path/to/pelican-plugins'</p>
-<p>PLUGIN_PATH可以是绝对路径，也可以是对于Pelican配置文件的相对路径。</p>
-<p>如果在文章内输入：</p>
-<p><code>Re = \frac{Du\rho}{\eta}</code></p>
-<p>则会显示为：</p>
-<p>$Re = \frac{Du\rho}{\eta}$</p><script type= "text/javascript">
+<p>In <a href="http://sorayng.github.io/category/che.html">ChE</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/aspen-plus.html">Aspen Plus</a><a href="http://sorayng.github.io/tag/reactive-distillation.html">Reactive Distillation</a></p>
+</footer><!-- /.post-info --><p>在使用Aspen Plus进行反应精馏模拟时，一个需要特别注意的地方是指前因子的单位问题。</p>
+<p>Aspen Plus内部的反应速率方程形式是扩展的Arrhenius方程，即：</p>
+<p>$$k = k_0(\frac{T}{T_0})^n exp{-(E_a/R)(1/T-1/T_0)}$$</p>
+<p>如果未指定$T_0$的值，则上式简化为：</p>
+<p>$$k = k_0T^n exp{-\frac{E_a}{RT}}$$</p>
+<p>如果$n$为0，则进一步退化为标准的Arrhenius方程。</p>
+<p>而化学反应速率通过下式来计算：</p>
+<p>$$r = k\prod_i[C_i]^{\alpha_i}$$</p>
+<p>上面的式子中，反应速率$r$的单位为$kmol/(s \cdot (holdup unit))$，$[C_i]$的单位取决于在<code>Reactions</code>中指定的<code>[Ci] basis</code>。而在Arrhenius方程中，由于Boltzmann因子项是无量纲的，反应速率的单位取决于指前因子和温度项。因此在输入指前因子的数值前，应当根据以上几个方程先确定反应速率$r$的单位，再除以浓度幂的单位以及温度项的单位，得到正确的指前因子单位，然后与动力学数据的文献核对是否一致。这里特别需要注意的一点就是，反应速率的单位是与持液量（Holdups）的单位有关的。</p><script type= "text/javascript">
     if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
         var mathjaxscript = document.createElement('script');
         mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
@@ -72,7 +71,7 @@
         (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
     }
 </script>
-<p>There are <a href="/toys/math-rendering-in-pelican.html#disqus_thread">comments</a>.</p>                </article>
+<p>There are <a href="http://sorayng.github.io/che/unit-of-pre-exponential-factor-in-reactive-distillation-simulation-using-aspen-plus.html#disqus_thread">comments</a>.</p>                </article>
             </aside><!-- /#featured -->
                 <section id="content" class="body">
                     <h1>Other articles</h1>
@@ -81,7 +80,51 @@
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="/optimization/duality-in-linear-programming-part-one.html" rel="bookmark"
+                    <h1><a href="http://sorayng.github.io/optimization/duality-in-linear-programming-part-two.html" rel="bookmark"
+                           title="Permalink to 线性规划的对偶问题（二）">线性规划的对偶问题（二）</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-03-13T17:46:00">
+                周四 13 三月 2014
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://sorayng.github.io/author/sorayng.html">sorayng</a>
+        </address>
+<p>In <a href="http://sorayng.github.io/category/optimization.html">Optimization</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/lp.html">LP</a><a href="http://sorayng.github.io/tag/dual.html">dual</a></p>
+</footer><!-- /.post-info -->                <p>介绍线性规划（LP）的对偶问题</p>
+                <a class="readmore" href="http://sorayng.github.io/optimization/duality-in-linear-programming-part-two.html">read more</a>
+<p>There are <a href="http://sorayng.github.io/optimization/duality-in-linear-programming-part-two.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://sorayng.github.io/toys/math-rendering-in-pelican.html" rel="bookmark"
+                           title="Permalink to Pelican下渲染数学公式">Pelican下渲染数学公式</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-03-12T16:28:00">
+                周三 12 三月 2014
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://sorayng.github.io/author/sorayng.html">sorayng</a>
+        </address>
+<p>In <a href="http://sorayng.github.io/category/toys.html">Toys</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/pelican.html">Pelican</a></p>
+</footer><!-- /.post-info -->                <p>这篇文章介绍了在Pelican下通过render_math插件渲染数学公式的方法。</p>
+                <a class="readmore" href="http://sorayng.github.io/toys/math-rendering-in-pelican.html">read more</a>
+<p>There are <a href="http://sorayng.github.io/toys/math-rendering-in-pelican.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://sorayng.github.io/optimization/duality-in-linear-programming-part-one.html" rel="bookmark"
                            title="Permalink to 线性规划的对偶问题（一）">线性规划的对偶问题（一）</a></h1>
                 </header>
 
@@ -92,18 +135,18 @@
         </abbr>
 
         <address class="vcard author">
-                By <a class="url fn" href="/author/sorayng.html">sorayng</a>
+                By <a class="url fn" href="http://sorayng.github.io/author/sorayng.html">sorayng</a>
         </address>
-<p>In <a href="/category/optimization.html">Optimization</a>. </p>
-<p>tags: <a href="/tag/lp.html">LP</a><a href="/tag/dual.html">dual</a></p>
+<p>In <a href="http://sorayng.github.io/category/optimization.html">Optimization</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/lp.html">LP</a><a href="http://sorayng.github.io/tag/dual.html">dual</a></p>
 </footer><!-- /.post-info -->                <p>介绍线性规划（LP）的对偶问题</p>
-                <a class="readmore" href="/optimization/duality-in-linear-programming-part-one.html">read more</a>
-<p>There are <a href="/optimization/duality-in-linear-programming-part-one.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+                <a class="readmore" href="http://sorayng.github.io/optimization/duality-in-linear-programming-part-one.html">read more</a>
+<p>There are <a href="http://sorayng.github.io/optimization/duality-in-linear-programming-part-one.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="/optimization/Benders-decomposition-for-MILP.html" rel="bookmark"
+                    <h1><a href="http://sorayng.github.io/optimization/Benders-decomposition-for-MILP.html" rel="bookmark"
                            title="Permalink to MILP的Benders分解方法">MILP的Benders分解方法</a></h1>
                 </header>
 
@@ -114,18 +157,18 @@
         </abbr>
 
         <address class="vcard author">
-                By <a class="url fn" href="/author/sorayng.html">sorayng</a>
+                By <a class="url fn" href="http://sorayng.github.io/author/sorayng.html">sorayng</a>
         </address>
-<p>In <a href="/category/optimization.html">Optimization</a>. </p>
-<p>tags: <a href="/tag/milp.html">MILP</a><a href="/tag/decomposition.html">decomposition</a></p>
+<p>In <a href="http://sorayng.github.io/category/optimization.html">Optimization</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/milp.html">MILP</a><a href="http://sorayng.github.io/tag/decomposition.html">decomposition</a></p>
 </footer><!-- /.post-info -->                <p>介绍混合整数线性规划（MILP）的Benders分解方法</p>
-                <a class="readmore" href="/optimization/Benders-decomposition-for-MILP.html">read more</a>
-<p>There are <a href="/optimization/Benders-decomposition-for-MILP.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+                <a class="readmore" href="http://sorayng.github.io/optimization/Benders-decomposition-for-MILP.html">read more</a>
+<p>There are <a href="http://sorayng.github.io/optimization/Benders-decomposition-for-MILP.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="/toys/tutorial-for-writing-blogs-using-pelican-hosted-on-github.html" rel="bookmark"
+                    <h1><a href="http://sorayng.github.io/toys/tutorial-for-writing-blogs-using-pelican-hosted-on-github.html" rel="bookmark"
                            title="Permalink to Windows下使用Pelican搭建静态博客以及Github托管">Windows下使用Pelican搭建静态博客以及Github托管</a></h1>
                 </header>
 
@@ -136,18 +179,18 @@
         </abbr>
 
         <address class="vcard author">
-                By <a class="url fn" href="/author/sorayng.html">sorayng</a>
+                By <a class="url fn" href="http://sorayng.github.io/author/sorayng.html">sorayng</a>
         </address>
-<p>In <a href="/category/toys.html">Toys</a>. </p>
-<p>tags: <a href="/tag/pelican.html">Pelican</a><a href="/tag/github.html">Github</a></p>
+<p>In <a href="http://sorayng.github.io/category/toys.html">Toys</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/pelican.html">Pelican</a><a href="http://sorayng.github.io/tag/github.html">Github</a></p>
 </footer><!-- /.post-info -->                <p>Pelican搭建静态博客简明教程</p>
-                <a class="readmore" href="/toys/tutorial-for-writing-blogs-using-pelican-hosted-on-github.html">read more</a>
-<p>There are <a href="/toys/tutorial-for-writing-blogs-using-pelican-hosted-on-github.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+                <a class="readmore" href="http://sorayng.github.io/toys/tutorial-for-writing-blogs-using-pelican-hosted-on-github.html">read more</a>
+<p>There are <a href="http://sorayng.github.io/toys/tutorial-for-writing-blogs-using-pelican-hosted-on-github.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="/toys/hello-world.html" rel="bookmark"
+                    <h1><a href="http://sorayng.github.io/toys/hello-world.html" rel="bookmark"
                            title="Permalink to Hello World">Hello World</a></h1>
                 </header>
 
@@ -158,13 +201,13 @@
         </abbr>
 
         <address class="vcard author">
-                By <a class="url fn" href="/author/sorayng.html">sorayng</a>
+                By <a class="url fn" href="http://sorayng.github.io/author/sorayng.html">sorayng</a>
         </address>
-<p>In <a href="/category/toys.html">Toys</a>. </p>
-<p>tags: <a href="/tag/pelican.html">Pelican</a><a href="/tag/github.html">Github</a></p>
+<p>In <a href="http://sorayng.github.io/category/toys.html">Toys</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/pelican.html">Pelican</a><a href="http://sorayng.github.io/tag/github.html">Github</a></p>
 </footer><!-- /.post-info -->                <p>Hello World on my GitHub Blog</p>
-                <a class="readmore" href="/toys/hello-world.html">read more</a>
-<p>There are <a href="/toys/hello-world.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+                <a class="readmore" href="http://sorayng.github.io/toys/hello-world.html">read more</a>
+<p>There are <a href="http://sorayng.github.io/toys/hello-world.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
             </ol><!-- /#posts-list -->
 <p class="paginator">
