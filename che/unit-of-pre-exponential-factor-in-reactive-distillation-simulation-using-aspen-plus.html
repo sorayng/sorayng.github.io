@@ -40,9 +40,9 @@
 <p>tags: <a href="http://sorayng.github.io/tag/aspen-plus.html">Aspen Plus</a><a href="http://sorayng.github.io/tag/reactive-distillation.html">Reactive Distillation</a></p>
 </footer><!-- /.post-info -->      <p>在使用Aspen Plus进行反应精馏模拟时，一个需要特别注意的地方是指前因子的单位问题。</p>
 <p>Aspen Plus内部的反应速率方程形式是扩展的Arrhenius方程，即：</p>
-<p>$$k = k_0(\frac{T}{T_0})^n \exp{-(E_a/R)(1/T-1/T_0)}$$</p>
+<p>$$k = k_0(\frac{T}{T_0})^n e^{-(E_a/R)(1/T-1/T_0)}$$</p>
 <p>如果未指定$T_0$的值，则上式简化为：</p>
-<p>$$k = k_0T^n \exp{-\frac{E_a}{RT}}$$</p>
+<p>$$k = k_0T^n e^{-\frac{E_a}{RT}}$$</p>
 <p>如果$n$为0，则进一步退化为标准的Arrhenius方程。</p>
 <p>而化学反应速率通过下式来计算：</p>
 <p>$$r = k\prod_i[C_i]^{\alpha_i}$$</p>

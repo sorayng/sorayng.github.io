@@ -38,12 +38,12 @@
         </address>
 <p>In <a href="http://sorayng.github.io/category/toys.html">Toys</a>. </p>
 <p>tags: <a href="http://sorayng.github.io/tag/pelican.html">Pelican</a></p>
-</footer><!-- /.post-info -->      <p><strong>Update 2014.03.19</strong></p>
+</footer><!-- /.post-info -->      <h3>Update 2014.03.19</h3>
 <p>前几天发现<code>math_render</code>处理含有<code>...</code>内容的markdown时会出现<code>list indices must be integers, not float</code>的错误，联系了作者
 <a href="http://doctrina.org/">Barry Steyn</a>，发现是与Python 3.x版本的兼容问题，目前这个问题已经解决。</p>
-<p>感谢Barry。
-Thank Barry.</p>
-<hr />
+<p>感谢Barry。</p>
+<p>Thank Barry.</p>
+<p>============</p>
 <p>在写作技术类文章时，经常会碰到公式，Pelican本身并不提供对公式的渲染功能。不过Pelican从3.0版本开始支持插件，到目前为止，已经形成了良好的生态圈，插件数量有数十种。这些插件均托管在<a href="https://github.com/getpelican/pelican-plugins">pelican-plugins</a>项目中。</p>
 <p>为了在页面中渲染数学公式，可以直接使用<a href="https://github.com/getpelican/pelican-plugins/tree/master/render_math">render_math</a>插件。这款插件可以通过<a href="http://www.mathjax.org/">MathJax</a>将页面中的LaTex或MathML渲染出来。在撰写文章时，包裹在\$...\$或\$\$...\$\$中的内容将会被识别为LaTex公式并进行渲染。</p>
 <p><code>render_math</code>的安装使用非常简单，只要将其文件放入Pelican的插件文件夹中，并在Pelican的配置文件中加入下面这行语句就可以了：</p>
