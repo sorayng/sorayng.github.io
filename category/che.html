@@ -16,13 +16,50 @@
                 <nav><ul>
                     <li class="active"><a href="http://sorayng.github.io/category/che.html">ChE</a></li>
                     <li><a href="http://sorayng.github.io/category/optimization.html">Optimization</a></li>
+                    <li><a href="http://sorayng.github.io/category/productivity.html">Productivity</a></li>
                     <li><a href="http://sorayng.github.io/category/toys.html">Toys</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://sorayng.github.io/che/reactor-models-in-aspen-plus.html">Aspen Plus中的反应器模型</a></h1>
+                    <h1 class="entry-title"><a href="http://sorayng.github.io/che/true-and-apparent-component-of-electrolyte-model-in-aspen-plus.html">Aspen Plus电解质模型中真实组分和表观组分的区别</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2014-08-01T16:07:00">
+                Fri 01 August 2014
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
+        </address>
+<p>In <a href="http://sorayng.github.io/category/che.html">ChE</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/aspen-plus.html">Aspen Plus</a></p>
+</footer><!-- /.post-info --><h2>真实组分和表观组分是指什么</h2>
+<p>NH3在水中的溶解反应如下：</p>
+<p>NH3 + H2O &lt;--&gt; NH4+ + OH-</p>
+<p>这个反应中所有的组分均为<strong>真实组分</strong>(True Component)，而<strong>表观组分</strong>(Apparent Component)为NH3和H2O。</p>
+<h2>不同选择对模拟结果有什么影响</h2>
+<p>不论是选择真实组分还是表观组分，他们的模拟结果应当是<strong>一致的</strong>。按照<em>Getting Started Modeling Processes with Electrolytes</em>中的说法，表观组分和真实组分可以自行选择：</p>
+<blockquote>
+<p>Choosing between the true component approach and the apparent component
+is a matter of personal preference. For all simulations, the simulation results
+should be equivalent.</p>
+</blockquote>
+<h2>真实组分和表观组分方法如何切换</h2>
+<p>进入物性方法选择页面，在<strong>Methods - Specifications | Global</strong>标签页中，勾选<strong>Use true components</strong>则表示选择真实组分方法，反之则使用表观组分方法。</p><p>There are <a href="http://sorayng.github.io/che/true-and-apparent-component-of-electrolyte-model-in-aspen-plus.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://sorayng.github.io/che/reactor-models-in-aspen-plus.html" rel="bookmark"
+                           title="Permalink to Aspen Plus中的反应器模型">Aspen Plus中的反应器模型</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2014-07-31T13:09:00">
                 Thu 31 July 2014
@@ -33,20 +70,10 @@
         </address>
 <p>In <a href="http://sorayng.github.io/category/che.html">ChE</a>. </p>
 <p>tags: <a href="http://sorayng.github.io/tag/aspen-plus.html">Aspen Plus</a></p>
-</footer><!-- /.post-info --><p><img alt="Aspen Plus中的反应器模型" src="/img/reactors_in_aspen_plus.png" title="Aspen Plus中的反应器模型" /></p>
-<p>Aspen Plus中共有7种反应器模型，如上图所示，他们大致可以分为三类：</p>
-<ul>
-<li>基于物料平衡：RStoic，RYield</li>
-<li>基于化学平衡：REquil，RGibbs</li>
-<li>基于反应动力学：RCSTR，RPlug，RBatch</li>
-</ul>
-<p>它们的区别如下：</p>
-<p><img alt="Aspen Plus中的反应器模型比较" src="/img/comparison_of_reactors_in_aspen_plus.png" title="Aspen Plus中的反应器模型比较" /></p><p>There are <a href="http://sorayng.github.io/che/reactor-models-in-aspen-plus.html#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+</footer><!-- /.post-info -->                <p>讨论Aspen Plus中的反应器模型</p>
+                <a class="readmore" href="http://sorayng.github.io/che/reactor-models-in-aspen-plus.html">read more</a>
+<p>There are <a href="http://sorayng.github.io/che/reactor-models-in-aspen-plus.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
