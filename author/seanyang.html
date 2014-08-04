@@ -23,7 +23,62 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://sorayng.github.io/che/true-and-apparent-component-of-electrolyte-model-in-aspen-plus.html">Aspen Plus电解质模型中真实组分和表观组分的区别</a></h1>
+                    <h1 class="entry-title"><a href="http://sorayng.github.io/che/conventional-solids-in-aspen-plus.html">Aspen Plus中的常规固体</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2014-08-04T10:52:00">
+                Mon 04 August 2014
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
+        </address>
+<p>In <a href="http://sorayng.github.io/category/che.html">ChE</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/aspen-plus.html">Aspen Plus</a></p>
+</footer><!-- /.post-info --><p>Aspen Plus中的常规固体（conventional solids）指的是纯组分固体，与之对应的非常规固体指的则是煤之类的混合物固体。需要注意的是，常规固体可以出现在相平衡和化学平衡计算中，包括电解质盐（electrolyte salts）。例如NaCl可以作为常规固体出现在电解质溶液中，这种情况下它应该在MIXED子物流中。</p>
+<p>如果不参与相平衡计算，常规固体可以被当作常规插入固体（conventional inert solids）来处理，在这种情况下：</p>
+<ul>
+<li>它应当被分配到子物流CISOLID中；</li>
+<li>它仍然可以参与化学平衡计算，但是注意要用RGibbs反应器来处理它，因为只有RGibbs可以处理固相的化学平衡。</li>
+</ul>
+<p>需要注意的是，常规固体出现在MIXED子物流中的时候，他们实际上是被当作气态或者液态来处理的（比如溶解在溶液当中）。只有被分配到CISOLID当中时，他们才被当作真正的固相来处理。</p>
+<blockquote>
+<p>Whenever conventional solids are present in the MIXED substream, they are assumed to be in a gaseous or liquid state (possibly dissolved in a solution). These components are only actually solid when they are in the CISOLID substream. If you force them into the MIXED substream (such as by specifying them this way in an inlet stream), flash calculations will determine the most favorable gaseous or liquid state for the components (further limited by the Valid phases specification for this flash), which may not be realistic if they should really be in the solid phase.</p>
+</blockquote><p>There are <a href="http://sorayng.github.io/che/conventional-solids-in-aspen-plus.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://sorayng.github.io/che/substreams-in-aspen-plus.html" rel="bookmark"
+                           title="Permalink to Aspen Plus中的子物流">Aspen Plus中的子物流</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-08-04T10:34:00">
+                Mon 04 August 2014
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
+        </address>
+<p>In <a href="http://sorayng.github.io/category/che.html">ChE</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/aspen-plus.html">Aspen Plus</a></p>
+</footer><!-- /.post-info -->                <p>介绍Aspen Plus中的子物流类型</p>
+                <a class="readmore" href="http://sorayng.github.io/che/substreams-in-aspen-plus.html">read more</a>
+<p>There are <a href="http://sorayng.github.io/che/substreams-in-aspen-plus.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://sorayng.github.io/che/true-and-apparent-component-of-electrolyte-model-in-aspen-plus.html" rel="bookmark"
+                           title="Permalink to Aspen Plus电解质模型中真实组分和表观组分的区别">Aspen Plus电解质模型中真实组分和表观组分的区别</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2014-08-01T16:07:00">
                 Fri 01 August 2014
@@ -34,24 +89,58 @@
         </address>
 <p>In <a href="http://sorayng.github.io/category/che.html">ChE</a>. </p>
 <p>tags: <a href="http://sorayng.github.io/tag/aspen-plus.html">Aspen Plus</a></p>
-</footer><!-- /.post-info --><h2>真实组分和表观组分是指什么</h2>
-<p>NH3在水中的溶解反应如下：</p>
-<p>NH3 + H2O &lt;--&gt; NH4+ + OH-</p>
-<p>这个反应中所有的组分均为<strong>真实组分</strong>(True Component)，而<strong>表观组分</strong>(Apparent Component)为NH3和H2O。</p>
-<h2>不同选择对模拟结果有什么影响</h2>
-<p>不论是选择真实组分还是表观组分，他们的模拟结果应当是<strong>一致的</strong>。按照<em>Getting Started Modeling Processes with Electrolytes</em>中的说法，表观组分和真实组分可以自行选择：</p>
-<blockquote>
-<p>Choosing between the true component approach and the apparent component
-is a matter of personal preference. For all simulations, the simulation results
-should be equivalent.</p>
-</blockquote>
-<h2>真实组分和表观组分方法如何切换</h2>
-<p>进入物性方法选择页面，在<strong>Methods - Specifications | Global</strong>标签页中，勾选<strong>Use true components</strong>则表示选择真实组分方法，反之则使用表观组分方法。</p><p>There are <a href="http://sorayng.github.io/che/true-and-apparent-component-of-electrolyte-model-in-aspen-plus.html#disqus_thread">comments</a>.</p>                </article>
+</footer><!-- /.post-info -->                <p>介绍Aspen Plus电解质模拟中真实组分和表观组分的含义以及他们对模拟结果的影响。</p>
+                <a class="readmore" href="http://sorayng.github.io/che/true-and-apparent-component-of-electrolyte-model-in-aspen-plus.html">read more</a>
+<p>There are <a href="http://sorayng.github.io/che/true-and-apparent-component-of-electrolyte-model-in-aspen-plus.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://sorayng.github.io/che/reactor-models-in-aspen-plus.html" rel="bookmark"
+                           title="Permalink to Aspen Plus中的反应器模型">Aspen Plus中的反应器模型</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-07-31T13:09:00">
+                Thu 31 July 2014
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
+        </address>
+<p>In <a href="http://sorayng.github.io/category/che.html">ChE</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/aspen-plus.html">Aspen Plus</a></p>
+</footer><!-- /.post-info -->                <p>讨论Aspen Plus中的反应器模型</p>
+                <a class="readmore" href="http://sorayng.github.io/che/reactor-models-in-aspen-plus.html">read more</a>
+<p>There are <a href="http://sorayng.github.io/che/reactor-models-in-aspen-plus.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://sorayng.github.io/che/unit-of-pre-exponential-factor-in-reactive-distillation-simulation-using-aspen-plus.html" rel="bookmark"
+                           title="Permalink to Aspen Plus反应精馏模拟中指前因子的单位问题">Aspen Plus反应精馏模拟中指前因子的单位问题</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-03-17T12:32:00">
+                Mon 17 March 2014
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
+        </address>
+<p>In <a href="http://sorayng.github.io/category/che.html">ChE</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/aspen-plus.html">Aspen Plus</a><a href="http://sorayng.github.io/tag/reactive-distillation.html">Reactive Distillation</a></p>
+</footer><!-- /.post-info -->                <p>这篇文章介绍了在使用Aspen Plus进行反应精馏模拟时，反应速率和指前因子的单位设置需要注意的问题。</p>
+                <a class="readmore" href="http://sorayng.github.io/che/unit-of-pre-exponential-factor-in-reactive-distillation-simulation-using-aspen-plus.html">read more</a>
+<p>There are <a href="http://sorayng.github.io/che/unit-of-pre-exponential-factor-in-reactive-distillation-simulation-using-aspen-plus.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
+            </ol><!-- /#posts-list -->
 <p class="paginator">
     Page 1 / 1
 </p>
-            </aside><!-- /#featured -->
-            </ol><!-- /#posts-list -->
             </section><!-- /#content -->
         <section id="extras" class="body">
                 <div class="blogroll">
