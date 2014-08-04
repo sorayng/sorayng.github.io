@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>MILP的Benders分解方法</title>
+        <title>Thunderbird账户配置和邮件的移动以及备份</title>
         <link rel="stylesheet" href="http://sorayng.github.io/theme/css/main.css" />
 
         <!--[if IE]>
@@ -15,8 +15,8 @@
                 <h1><a href="http://sorayng.github.io/">sorayNg OPTimized  <strong>Life is Non-OPTimal.</strong></a></h1>
                 <nav><ul>
                     <li><a href="http://sorayng.github.io/category/che.html">ChE</a></li>
-                    <li class="active"><a href="http://sorayng.github.io/category/optimization.html">Optimization</a></li>
-                    <li><a href="http://sorayng.github.io/category/productivity.html">Productivity</a></li>
+                    <li><a href="http://sorayng.github.io/category/optimization.html">Optimization</a></li>
+                    <li class="active"><a href="http://sorayng.github.io/category/productivity.html">Productivity</a></li>
                     <li><a href="http://sorayng.github.io/category/toys.html">Toys</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
@@ -24,63 +24,41 @@
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="http://sorayng.github.io/optimization/Benders-decomposition-for-MILP.html" rel="bookmark"
-           title="Permalink to MILP的Benders分解方法">MILP的Benders分解方法</a></h1>
+        <a href="http://sorayng.github.io/productivity/move-and-backup-thunderbird-profiles-and-emails.html" rel="bookmark"
+           title="Permalink to Thunderbird账户配置和邮件的移动以及备份">Thunderbird账户配置和邮件的移动以及备份</a></h1>
     </header>
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2014-03-11T09:46:00">
-                Tue 11 March 2014
+        <abbr class="published" title="2014-08-04T15:18:00">
+                Mon 04 August 2014
         </abbr>
 
         <address class="vcard author">
                 By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
         </address>
-<p>In <a href="http://sorayng.github.io/category/optimization.html">Optimization</a>. </p>
-<p>tags: <a href="http://sorayng.github.io/tag/milp.html">MILP</a><a href="http://sorayng.github.io/tag/decomposition.html">decomposition</a></p>
-</footer><!-- /.post-info -->      <p>Benders分解（Benders Decomposition）是一种常用的数学规划问题分解方法，由Jacques F. Benders提出。这里我们尝试用这种方法求解混合整数线性规划（MILP）。</p>
-<p>假设待求解的MILP问题如下：</p>
-<p>$min c^Tx + f^Ty$<br />
-$s.t. Ax + By \geq b$</p>
-<p>其中，x为连续变量，y为二元变量。</p><script type= "text/javascript">
-    if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = 'https:' == document.location.protocol
-                ? 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
-                : 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-            "MathJax.Hub.Config({" +
-            "    config: ['MMLorHTML.js']," +
-            "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-            "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-            "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-            "    displayAlign: 'center'," +
-            "    displayIndent: '0em'," +
-            "    showMathMenu: true," +
-            "    tex2jax: { " +
-            "        inlineMath: [ ['$','$'] ], " +
-            "        displayMath: [ ['$$','$$'] ]," +
-            "        processEscapes: true," +
-            "        preview: 'TeX'," +
-            "    }, " +
-            "    'HTML-CSS': { " +
-            "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-            "    } " +
-            "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-    }
-</script>
-
+<p>In <a href="http://sorayng.github.io/category/productivity.html">Productivity</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/thunderbird.html">thunderbird</a><a href="http://sorayng.github.io/tag/email.html">email</a></p>
+</footer><!-- /.post-info -->      <p>Thunderbird的账户配置文件和邮件都保存在profiles文件夹里面，但是profiles文件夹默认存放在C盘，如果系统崩溃恢复起来比较麻烦。</p>
+<h2>Thunderbird profiles的位置</h2>
+<p>Thunderbird默认将配置文件存放在<code>%AppData%\Thunderbird\Profiles\xxxxxxxx.default</code>，包括账户配置信息和邮件副本。</p>
+<h2>Thunderbird profiles的备份</h2>
+<p>直接将profiles文件夹复制到其他地方即可。</p>
+<h2>Thunderbird profiles的移动</h2>
+<p>profiles文件夹移动到其他位置然后修改<code>profiles.ini</code>即可：</p>
+<ol>
+<li>关闭Thunderbird；</li>
+<li>移动profiles文件夹到目标位置；</li>
+<li>打开<code>%AppData%\Thunderbird\profiles.ini</code>，修改<code>IsRelative=1</code>为<code>IsRelative=0</code>，然后将<code>Path=</code>后修改为移动后的文件夹位置；</li>
+<li>重新打开Thunderbird即可。</li>
+</ol>
     </div><!-- /.entry-content -->
     <div class="comments">
       <h2>Comments !</h2>
       <div id="disqus_thread"></div>
       <script type="text/javascript">
-        var disqus_identifier = "optimization/Benders-decomposition-for-MILP.html";
-        var disqus_url = "http://sorayng.github.io/optimization/Benders-decomposition-for-MILP.html";
+        var disqus_identifier = "productivity/move-and-backup-thunderbird-profiles-and-emails.html";
+        var disqus_url = "http://sorayng.github.io/productivity/move-and-backup-thunderbird-profiles-and-emails.html";
         (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = 'http://sorayng-gh.disqus.com/embed.js';

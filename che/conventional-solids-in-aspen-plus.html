@@ -45,7 +45,7 @@
 <li>它应当被分配到子物流CISOLID中；</li>
 <li>它仍然可以参与化学平衡计算，但是注意要用RGibbs反应器来处理它，因为只有RGibbs可以处理固相的化学平衡。</li>
 </ul>
-<p>需要注意的是，常规固体出现在MIXED子物流中的时候，他们实际上是被当作气态或者液态来处理的（比如溶解在溶液当中）。只有被分配到CISOLID当中时，他们才被当作真正的固相来处理。</p>
+<p>需要注意的是，常规固体出现在MIXED子物流中的时候，它们实际上是被当作气态或者液态来处理的（比如溶解在溶液当中）。只有被分配到CISOLID当中时，他们才被当作真正的固相来处理。</p>
 <blockquote>
 <p>Whenever conventional solids are present in the MIXED substream, they are assumed to be in a gaseous or liquid state (possibly dissolved in a solution). These components are only actually solid when they are in the CISOLID substream. If you force them into the MIXED substream (such as by specifying them this way in an inlet stream), flash calculations will determine the most favorable gaseous or liquid state for the components (further limited by the Valid phases specification for this flash), which may not be realistic if they should really be in the solid phase.</p>
 </blockquote>

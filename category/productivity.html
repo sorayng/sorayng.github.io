@@ -23,29 +23,61 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://sorayng.github.io/productivity/markdown-quick-reference.html">Markdown语法速查</a></h1>
+                    <h1 class="entry-title"><a href="http://sorayng.github.io/productivity/move-and-backup-thunderbird-profiles-and-emails.html">Thunderbird账户配置和邮件的移动以及备份</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2014-08-04T15:18:00">
+                Mon 04 August 2014
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
+        </address>
+<p>In <a href="http://sorayng.github.io/category/productivity.html">Productivity</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/thunderbird.html">thunderbird</a><a href="http://sorayng.github.io/tag/email.html">email</a></p>
+</footer><!-- /.post-info --><p>Thunderbird的账户配置文件和邮件都保存在profiles文件夹里面，但是profiles文件夹默认存放在C盘，如果系统崩溃恢复起来比较麻烦。</p>
+<h2>Thunderbird profiles的位置</h2>
+<p>Thunderbird默认将配置文件存放在<code>%AppData%\Thunderbird\Profiles\xxxxxxxx.default</code>，包括账户配置信息和邮件副本。</p>
+<h2>Thunderbird profiles的备份</h2>
+<p>直接将profiles文件夹复制到其他地方即可。</p>
+<h2>Thunderbird profiles的移动</h2>
+<p>profiles文件夹移动到其他位置然后修改<code>profiles.ini</code>即可：</p>
+<ol>
+<li>关闭Thunderbird；</li>
+<li>移动profiles文件夹到目标位置；</li>
+<li>打开<code>%AppData%\Thunderbird\profiles.ini</code>，修改<code>IsRelative=1</code>为<code>IsRelative=0</code>，然后将<code>Path=</code>后修改为移动后的文件夹位置；</li>
+<li>重新打开Thunderbird即可。</li>
+</ol><p>There are <a href="http://sorayng.github.io/productivity/move-and-backup-thunderbird-profiles-and-emails.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://sorayng.github.io/productivity/markdown-quick-reference.html" rel="bookmark"
+                           title="Permalink to Markdown语法速查">Markdown语法速查</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2014-08-01T15:31:00">
                 Fri 01 August 2014
         </abbr>
 
         <address class="vcard author">
-                By <a class="url fn" href="http://sorayng.github.io/author/sorayng.html">sorayng</a>
+                By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
         </address>
 <p>In <a href="http://sorayng.github.io/category/productivity.html">Productivity</a>. </p>
 <p>tags: <a href="http://sorayng.github.io/tag/markdown.html">markdown</a></p>
-</footer><!-- /.post-info --><h2>引用</h2>
-<blockquote>
-<p>我是一段被引用的文字</p>
-</blockquote>
-<p>使用<code>print()</code>函数进行打印</p>
-<h2>使用markdown保留符号</h2>
-<p>This is **not** in bold.</p><p>There are <a href="http://sorayng.github.io/productivity/markdown-quick-reference.html#disqus_thread">comments</a>.</p>                </article>
+</footer><!-- /.post-info -->                <p>Markdown语法速查</p>
+                <a class="readmore" href="http://sorayng.github.io/productivity/markdown-quick-reference.html">read more</a>
+<p>There are <a href="http://sorayng.github.io/productivity/markdown-quick-reference.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
+            </ol><!-- /#posts-list -->
 <p class="paginator">
     Page 1 / 1
 </p>
-            </aside><!-- /#featured -->
-            </ol><!-- /#posts-list -->
             </section><!-- /#content -->
         <section id="extras" class="body">
                 <div class="blogroll">

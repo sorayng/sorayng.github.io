@@ -23,7 +23,43 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://sorayng.github.io/che/conventional-solids-in-aspen-plus.html">Aspen Plus中的常规固体</a></h1>
+                    <h1 class="entry-title"><a href="http://sorayng.github.io/productivity/move-and-backup-thunderbird-profiles-and-emails.html">Thunderbird账户配置和邮件的移动以及备份</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2014-08-04T15:18:00">
+                Mon 04 August 2014
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
+        </address>
+<p>In <a href="http://sorayng.github.io/category/productivity.html">Productivity</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/thunderbird.html">thunderbird</a><a href="http://sorayng.github.io/tag/email.html">email</a></p>
+</footer><!-- /.post-info --><p>Thunderbird的账户配置文件和邮件都保存在profiles文件夹里面，但是profiles文件夹默认存放在C盘，如果系统崩溃恢复起来比较麻烦。</p>
+<h2>Thunderbird profiles的位置</h2>
+<p>Thunderbird默认将配置文件存放在<code>%AppData%\Thunderbird\Profiles\xxxxxxxx.default</code>，包括账户配置信息和邮件副本。</p>
+<h2>Thunderbird profiles的备份</h2>
+<p>直接将profiles文件夹复制到其他地方即可。</p>
+<h2>Thunderbird profiles的移动</h2>
+<p>profiles文件夹移动到其他位置然后修改<code>profiles.ini</code>即可：</p>
+<ol>
+<li>关闭Thunderbird；</li>
+<li>移动profiles文件夹到目标位置；</li>
+<li>打开<code>%AppData%\Thunderbird\profiles.ini</code>，修改<code>IsRelative=1</code>为<code>IsRelative=0</code>，然后将<code>Path=</code>后修改为移动后的文件夹位置；</li>
+<li>重新打开Thunderbird即可。</li>
+</ol><p>There are <a href="http://sorayng.github.io/productivity/move-and-backup-thunderbird-profiles-and-emails.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://sorayng.github.io/che/conventional-solids-in-aspen-plus.html" rel="bookmark"
+                           title="Permalink to Aspen Plus中的常规固体">Aspen Plus中的常规固体</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2014-08-04T10:52:00">
                 Mon 04 August 2014
@@ -34,21 +70,10 @@
         </address>
 <p>In <a href="http://sorayng.github.io/category/che.html">ChE</a>. </p>
 <p>tags: <a href="http://sorayng.github.io/tag/aspen-plus.html">Aspen Plus</a></p>
-</footer><!-- /.post-info --><p>Aspen Plus中的常规固体（conventional solids）指的是纯组分固体，与之对应的非常规固体指的则是煤之类的混合物固体。需要注意的是，常规固体可以出现在相平衡和化学平衡计算中，包括电解质盐（electrolyte salts）。例如NaCl可以作为常规固体出现在电解质溶液中，这种情况下它应该在MIXED子物流中。</p>
-<p>如果不参与相平衡计算，常规固体可以被当作常规插入固体（conventional inert solids）来处理，在这种情况下：</p>
-<ul>
-<li>它应当被分配到子物流CISOLID中；</li>
-<li>它仍然可以参与化学平衡计算，但是注意要用RGibbs反应器来处理它，因为只有RGibbs可以处理固相的化学平衡。</li>
-</ul>
-<p>需要注意的是，常规固体出现在MIXED子物流中的时候，他们实际上是被当作气态或者液态来处理的（比如溶解在溶液当中）。只有被分配到CISOLID当中时，他们才被当作真正的固相来处理。</p>
-<blockquote>
-<p>Whenever conventional solids are present in the MIXED substream, they are assumed to be in a gaseous or liquid state (possibly dissolved in a solution). These components are only actually solid when they are in the CISOLID substream. If you force them into the MIXED substream (such as by specifying them this way in an inlet stream), flash calculations will determine the most favorable gaseous or liquid state for the components (further limited by the Valid phases specification for this flash), which may not be realistic if they should really be in the solid phase.</p>
-</blockquote><p>There are <a href="http://sorayng.github.io/che/conventional-solids-in-aspen-plus.html#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+</footer><!-- /.post-info -->                <p>介绍Aspen Plus中常规固体的处理方法</p>
+                <a class="readmore" href="http://sorayng.github.io/che/conventional-solids-in-aspen-plus.html">read more</a>
+<p>There are <a href="http://sorayng.github.io/che/conventional-solids-in-aspen-plus.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -96,6 +121,28 @@
 
             <li><article class="hentry">
                 <header>
+                    <h1><a href="http://sorayng.github.io/productivity/markdown-quick-reference.html" rel="bookmark"
+                           title="Permalink to Markdown语法速查">Markdown语法速查</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-08-01T15:31:00">
+                Fri 01 August 2014
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
+        </address>
+<p>In <a href="http://sorayng.github.io/category/productivity.html">Productivity</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/markdown.html">markdown</a></p>
+</footer><!-- /.post-info -->                <p>Markdown语法速查</p>
+                <a class="readmore" href="http://sorayng.github.io/productivity/markdown-quick-reference.html">read more</a>
+<p>There are <a href="http://sorayng.github.io/productivity/markdown-quick-reference.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
                     <h1><a href="http://sorayng.github.io/che/reactor-models-in-aspen-plus.html" rel="bookmark"
                            title="Permalink to Aspen Plus中的反应器模型">Aspen Plus中的反应器模型</a></h1>
                 </header>
@@ -114,6 +161,28 @@
 </footer><!-- /.post-info -->                <p>讨论Aspen Plus中的反应器模型</p>
                 <a class="readmore" href="http://sorayng.github.io/che/reactor-models-in-aspen-plus.html">read more</a>
 <p>There are <a href="http://sorayng.github.io/che/reactor-models-in-aspen-plus.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://sorayng.github.io/toys/comparision-of-task-list-services.html" rel="bookmark"
+                           title="Permalink to 几个任务列表平台的比较">几个任务列表平台的比较</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-07-25T12:32:00">
+                Fri 25 July 2014
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
+        </address>
+<p>In <a href="http://sorayng.github.io/category/toys.html">Toys</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/gtd.html">GTD</a></p>
+</footer><!-- /.post-info -->                <p>几个任务列表平台的比较</p>
+                <a class="readmore" href="http://sorayng.github.io/toys/comparision-of-task-list-services.html">read more</a>
+<p>There are <a href="http://sorayng.github.io/toys/comparision-of-task-list-services.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
 
             <li><article class="hentry">
@@ -137,9 +206,54 @@
                 <a class="readmore" href="http://sorayng.github.io/che/unit-of-pre-exponential-factor-in-reactive-distillation-simulation-using-aspen-plus.html">read more</a>
 <p>There are <a href="http://sorayng.github.io/che/unit-of-pre-exponential-factor-in-reactive-distillation-simulation-using-aspen-plus.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://sorayng.github.io/optimization/duality-in-linear-programming-part-two.html" rel="bookmark"
+                           title="Permalink to 线性规划的对偶问题（二）">线性规划的对偶问题（二）</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-03-13T17:46:00">
+                Thu 13 March 2014
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
+        </address>
+<p>In <a href="http://sorayng.github.io/category/optimization.html">Optimization</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/lp.html">LP</a><a href="http://sorayng.github.io/tag/dual.html">dual</a></p>
+</footer><!-- /.post-info -->                <p>介绍线性规划（LP）的对偶问题</p>
+                <a class="readmore" href="http://sorayng.github.io/optimization/duality-in-linear-programming-part-two.html">read more</a>
+<p>There are <a href="http://sorayng.github.io/optimization/duality-in-linear-programming-part-two.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://sorayng.github.io/toys/math-rendering-in-pelican.html" rel="bookmark"
+                           title="Permalink to Pelican下渲染数学公式">Pelican下渲染数学公式</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-03-12T16:28:00">
+                Wed 12 March 2014
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
+        </address>
+<p>In <a href="http://sorayng.github.io/category/toys.html">Toys</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/pelican.html">Pelican</a></p>
+</footer><!-- /.post-info -->                <p>这篇文章介绍了在Pelican下通过render_math插件渲染数学公式的方法。</p>
+                <a class="readmore" href="http://sorayng.github.io/toys/math-rendering-in-pelican.html">read more</a>
+<p>There are <a href="http://sorayng.github.io/toys/math-rendering-in-pelican.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
             </ol><!-- /#posts-list -->
 <p class="paginator">
-    Page 1 / 1
+    Page 1 / 2
+        <a href="http://sorayng.github.io/author\seanyang2.html">&raquo;</a>
 </p>
             </section><!-- /#content -->
         <section id="extras" class="body">
