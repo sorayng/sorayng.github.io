@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>Markdown语法速查</title>
+        <title>Aspen Plus中的反应器模型-RStoic</title>
         <link rel="stylesheet" href="http://sorayng.github.io/theme/css/main.css" />
 
         <!--[if IE]>
@@ -14,9 +14,9 @@
         <header id="banner" class="body">
                 <h1><a href="http://sorayng.github.io/">sorayNg OPTimized  <strong>Life is Non-OPTimal.</strong></a></h1>
                 <nav><ul>
-                    <li><a href="http://sorayng.github.io/category/che.html">ChE</a></li>
+                    <li class="active"><a href="http://sorayng.github.io/category/che.html">ChE</a></li>
                     <li><a href="http://sorayng.github.io/category/optimization.html">Optimization</a></li>
-                    <li class="active"><a href="http://sorayng.github.io/category/productivity.html">Productivity</a></li>
+                    <li><a href="http://sorayng.github.io/category/productivity.html">Productivity</a></li>
                     <li><a href="http://sorayng.github.io/category/toys.html">Toys</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
@@ -24,45 +24,62 @@
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="http://sorayng.github.io/productivity/markdown-quick-reference.html" rel="bookmark"
-           title="Permalink to Markdown语法速查">Markdown语法速查</a></h1>
+        <a href="http://sorayng.github.io/che/reactor-models-in-aspen-plus-rstoic.html" rel="bookmark"
+           title="Permalink to Aspen Plus中的反应器模型-RStoic">Aspen Plus中的反应器模型-RStoic</a></h1>
     </header>
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2014-08-01T15:31:00">
-                Fri 01 August 2014
+        <abbr class="published" title="2014-08-05T14:32:00">
+                Tue 05 August 2014
         </abbr>
 
         <address class="vcard author">
                 By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
         </address>
-<p>In <a href="http://sorayng.github.io/category/productivity.html">Productivity</a>. </p>
-<p>tags: <a href="http://sorayng.github.io/tag/markdown.html">markdown</a></p>
-</footer><!-- /.post-info -->      <p>写作这篇文章是为了快速查询markdown语法，并不在于全面详细的介绍。如果需要系统了解markdown语法，可以查阅<a href="http://wowubuntu.com/markdown/index.html">Markdown语法说明</a>。</p>
-<h2>h1</h2>
-<p>语法：</p>
-<div class="highlight"><pre><span class="err">我是</span><span class="n">h1</span>
-<span class="o">======</span>
-</pre></div>
-
-
-<p>结果：</p>
-<h1>我是h1</h1>
-<h2>引用</h2>
-<blockquote>
-<p>我是一段被引用的文字</p>
-</blockquote>
-<p>使用<code>print()</code>函数进行打印</p>
-<h2>使用markdown保留符号</h2>
-<p>This is **not** in bold.</p>
+<p>In <a href="http://sorayng.github.io/category/che.html">ChE</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/aspen-plus.html">Aspen Plus</a></p>
+</footer><!-- /.post-info -->      <p>前几天介绍过<a href="http://sorayng.github.io/che/reactor-models-in-aspen-plus.html">Aspen Plus中的7种反应器模型</a>，今天重点研究下基于转化率的RStoic。</p>
+<h2>RStoic的原理</h2>
+<p>RStoic是最简单的反应器模型，它基于反应的转化率，所以它需要知道反应的化学方程式。在此基础上，它可以计算反应物的组成分布和反应热。</p>
+<h2>什么情况下使用RStoic？</h2>
+<ul>
+<li>已知化学反应方程式和反应的转化率</li>
+<li>反应动力学数据未知或不重要</li>
+</ul>
+<h2>RStoic使用要点</h2>
+<ol>
+<li>RStoic可以处理平行反应和串联反应。此外，RStoic可以进行产物选择性和反应热的计算；</li>
+<li>RStoic的反应方程式在其内部定义，并不出现在全局的Reactions之中，如果不定义反应方程式，可以在Combustion标签页生成燃烧反应；</li>
+<li>可以选择计算、不计算或者自行指定反应热。</li>
+</ol>
+<h2>蒸汽转化制氢反应的模拟</h2>
+<p>我们来看一个简单的例子，甲烷蒸汽转化制氢反应的模拟：</p>
+<p><a href="http://sorayng.github.io/docs/Steam_Reforming_RStoic.bkp">甲烷蒸汽转化制氢RStoic模型bkp - Aspen Plus V7.3</a></p>
+<p>甲烷和水蒸汽可以在镍的催化下生成氢气，这是目前炼厂里制氢的主要方式：</p>
+<p>CH4 + 2H2O &lt;--&gt; CO2 + 4H2</p>
+<p>假设反应条件如下：</p>
+<ul>
+<li>原料气流量为100 kmol/hr，温度为750 ℃，甲烷的摩尔分数为20%，水蒸气的摩尔分数为80%；</li>
+<li>反应压力0.1013 MPa，绝热反应；</li>
+<li>反应器出口处CH4转化率为73%</li>
+</ul>
+<p>使用RStoic模拟的结果为：</p>
+<ul>
+<li>反应产物的温度降为156.9 ℃，可见该反应为强吸热反应；</li>
+<li>反应产物的分布如下：
+  CH4        5.4
+  H2O        50.8
+  CO2        14.6
+  H2         58.4</li>
+</ul>
     </div><!-- /.entry-content -->
     <div class="comments">
       <h2>Comments !</h2>
       <div id="disqus_thread"></div>
       <script type="text/javascript">
-        var disqus_identifier = "productivity/markdown-quick-reference.html";
-        var disqus_url = "http://sorayng.github.io/productivity/markdown-quick-reference.html";
+        var disqus_identifier = "che/reactor-models-in-aspen-plus-rstoic.html";
+        var disqus_url = "http://sorayng.github.io/che/reactor-models-in-aspen-plus-rstoic.html";
         (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = 'http://sorayng-gh.disqus.com/embed.js';

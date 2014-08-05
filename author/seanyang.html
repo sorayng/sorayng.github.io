@@ -23,7 +23,64 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://sorayng.github.io/productivity/move-and-backup-thunderbird-profiles-and-emails.html">Thunderbird账户配置和邮件的移动以及备份</a></h1>
+                    <h1 class="entry-title"><a href="http://sorayng.github.io/che/reactor-models-in-aspen-plus-rstoic.html">Aspen Plus中的反应器模型-RStoic</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2014-08-05T14:32:00">
+                Tue 05 August 2014
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
+        </address>
+<p>In <a href="http://sorayng.github.io/category/che.html">ChE</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/aspen-plus.html">Aspen Plus</a></p>
+</footer><!-- /.post-info --><p>前几天介绍过<a href="http://sorayng.github.io/che/reactor-models-in-aspen-plus.html">Aspen Plus中的7种反应器模型</a>，今天重点研究下基于转化率的RStoic。</p>
+<h2>RStoic的原理</h2>
+<p>RStoic是最简单的反应器模型，它基于反应的转化率，所以它需要知道反应的化学方程式。在此基础上，它可以计算反应物的组成分布和反应热。</p>
+<h2>什么情况下使用RStoic？</h2>
+<ul>
+<li>已知化学反应方程式和反应的转化率</li>
+<li>反应动力学数据未知或不重要</li>
+</ul>
+<h2>RStoic使用要点</h2>
+<ol>
+<li>RStoic可以处理平行反应和串联反应。此外，RStoic可以进行产物选择性和反应热的计算；</li>
+<li>RStoic的反应方程式在其内部定义，并不出现在全局的Reactions之中，如果不定义反应方程式，可以在Combustion标签页生成燃烧反应；</li>
+<li>可以选择计算、不计算或者自行指定反应热。</li>
+</ol>
+<h2>蒸汽转化制氢反应的模拟</h2>
+<p>我们来看一个简单的例子，甲烷蒸汽转化制氢反应的模拟：</p>
+<p><a href="http://sorayng.github.io/docs/Steam_Reforming_RStoic.bkp">甲烷蒸汽转化制氢RStoic模型bkp - Aspen Plus V7.3</a></p>
+<p>甲烷和水蒸汽可以在镍的催化下生成氢气，这是目前炼厂里制氢的主要方式：</p>
+<p>CH4 + 2H2O &lt;--&gt; CO2 + 4H2</p>
+<p>假设反应条件如下：</p>
+<ul>
+<li>原料气流量为100 kmol/hr，温度为750 ℃，甲烷的摩尔分数为20%，水蒸气的摩尔分数为80%；</li>
+<li>反应压力0.1013 MPa，绝热反应；</li>
+<li>反应器出口处CH4转化率为73%</li>
+</ul>
+<p>使用RStoic模拟的结果为：</p>
+<ul>
+<li>反应产物的温度降为156.9 ℃，可见该反应为强吸热反应；</li>
+<li>反应产物的分布如下：
+  CH4        5.4
+  H2O        50.8
+  CO2        14.6
+  H2         58.4</li>
+</ul><p>There are <a href="http://sorayng.github.io/che/reactor-models-in-aspen-plus-rstoic.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://sorayng.github.io/productivity/move-and-backup-thunderbird-profiles-and-emails.html" rel="bookmark"
+                           title="Permalink to Thunderbird账户配置和邮件的移动以及备份">Thunderbird账户配置和邮件的移动以及备份</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2014-08-04T15:18:00">
                 Mon 04 August 2014
@@ -34,24 +91,10 @@
         </address>
 <p>In <a href="http://sorayng.github.io/category/productivity.html">Productivity</a>. </p>
 <p>tags: <a href="http://sorayng.github.io/tag/thunderbird.html">thunderbird</a><a href="http://sorayng.github.io/tag/email.html">email</a></p>
-</footer><!-- /.post-info --><p>Thunderbird的账户配置文件和邮件都保存在profiles文件夹里面，但是profiles文件夹默认存放在C盘，如果系统崩溃恢复起来比较麻烦。</p>
-<h2>Thunderbird profiles的位置</h2>
-<p>Thunderbird默认将配置文件存放在<code>%AppData%\Thunderbird\Profiles\xxxxxxxx.default</code>，包括账户配置信息和邮件副本。</p>
-<h2>Thunderbird profiles的备份</h2>
-<p>直接将profiles文件夹复制到其他地方即可。</p>
-<h2>Thunderbird profiles的移动</h2>
-<p>profiles文件夹移动到其他位置然后修改<code>profiles.ini</code>即可：</p>
-<ol>
-<li>关闭Thunderbird；</li>
-<li>移动profiles文件夹到目标位置；</li>
-<li>打开<code>%AppData%\Thunderbird\profiles.ini</code>，修改<code>IsRelative=1</code>为<code>IsRelative=0</code>，然后将<code>Path=</code>后修改为移动后的文件夹位置；</li>
-<li>重新打开Thunderbird即可。</li>
-</ol><p>There are <a href="http://sorayng.github.io/productivity/move-and-backup-thunderbird-profiles-and-emails.html#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+</footer><!-- /.post-info -->                <p>介绍Thunderbird账户配置和邮件的移动以及备份方法</p>
+                <a class="readmore" href="http://sorayng.github.io/productivity/move-and-backup-thunderbird-profiles-and-emails.html">read more</a>
+<p>There are <a href="http://sorayng.github.io/productivity/move-and-backup-thunderbird-profiles-and-emails.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -165,7 +208,7 @@
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="http://sorayng.github.io/toys/comparision-of-task-list-services.html" rel="bookmark"
+                    <h1><a href="http://sorayng.github.io/productivity/comparision-of-task-list-services.html" rel="bookmark"
                            title="Permalink to 几个任务列表平台的比较">几个任务列表平台的比较</a></h1>
                 </header>
 
@@ -178,11 +221,11 @@
         <address class="vcard author">
                 By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
         </address>
-<p>In <a href="http://sorayng.github.io/category/toys.html">Toys</a>. </p>
+<p>In <a href="http://sorayng.github.io/category/productivity.html">Productivity</a>. </p>
 <p>tags: <a href="http://sorayng.github.io/tag/gtd.html">GTD</a></p>
 </footer><!-- /.post-info -->                <p>几个任务列表平台的比较</p>
-                <a class="readmore" href="http://sorayng.github.io/toys/comparision-of-task-list-services.html">read more</a>
-<p>There are <a href="http://sorayng.github.io/toys/comparision-of-task-list-services.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+                <a class="readmore" href="http://sorayng.github.io/productivity/comparision-of-task-list-services.html">read more</a>
+<p>There are <a href="http://sorayng.github.io/productivity/comparision-of-task-list-services.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
 
             <li><article class="hentry">
@@ -227,28 +270,6 @@
 </footer><!-- /.post-info -->                <p>介绍线性规划（LP）的对偶问题</p>
                 <a class="readmore" href="http://sorayng.github.io/optimization/duality-in-linear-programming-part-two.html">read more</a>
 <p>There are <a href="http://sorayng.github.io/optimization/duality-in-linear-programming-part-two.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://sorayng.github.io/toys/math-rendering-in-pelican.html" rel="bookmark"
-                           title="Permalink to Pelican下渲染数学公式">Pelican下渲染数学公式</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2014-03-12T16:28:00">
-                Wed 12 March 2014
-        </abbr>
-
-        <address class="vcard author">
-                By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
-        </address>
-<p>In <a href="http://sorayng.github.io/category/toys.html">Toys</a>. </p>
-<p>tags: <a href="http://sorayng.github.io/tag/pelican.html">Pelican</a></p>
-</footer><!-- /.post-info -->                <p>这篇文章介绍了在Pelican下通过render_math插件渲染数学公式的方法。</p>
-                <a class="readmore" href="http://sorayng.github.io/toys/math-rendering-in-pelican.html">read more</a>
-<p>There are <a href="http://sorayng.github.io/toys/math-rendering-in-pelican.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
             </ol><!-- /#posts-list -->
 <p class="paginator">
