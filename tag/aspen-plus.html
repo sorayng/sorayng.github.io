@@ -23,7 +23,37 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://sorayng.github.io/che/reactor-models-in-aspen-plus-requil.html">Aspen Plus中的反应器模型-REquil</a></h1>
+                    <h1 class="entry-title"><a href="http://sorayng.github.io/che/transfer-block-in-aspen-plus.html">Aspen Plus中的变量传递模块Transfer</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2014-08-13T14:14:00">
+                Wed 13 August 2014
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
+        </address>
+<p>In <a href="http://sorayng.github.io/category/che.html">ChE</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/aspen-plus.html">Aspen Plus</a></p>
+</footer><!-- /.post-info --><p>Aspen Plus中有一个很好用的流程模拟辅助模块-Transfer。Transfer模块有些类似于Hysys的表格模块，但是只能在流程模拟中传递数据，不能计算数据（如果需要计算的话，可以使用Calculator）。</p>
+<p>在流程使用序贯模块法求解时，transfer模块按照模块的计算顺序进行变量传递，它可以传递的内容包括：</p>
+<ul>
+<li>整个流股的数据</li>
+<li>流股组成和流量</li>
+<li>所有流程中的变量（例如单元的操作参数）</li>
+</ul><p>There are <a href="http://sorayng.github.io/che/transfer-block-in-aspen-plus.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://sorayng.github.io/che/reactor-models-in-aspen-plus-requil.html" rel="bookmark"
+                           title="Permalink to Aspen Plus中的反应器模型-REquil">Aspen Plus中的反应器模型-REquil</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2014-08-12T18:02:00">
                 Tue 12 August 2014
@@ -34,50 +64,10 @@
         </address>
 <p>In <a href="http://sorayng.github.io/category/che.html">ChE</a>. </p>
 <p>tags: <a href="http://sorayng.github.io/tag/aspen-plus.html">Aspen Plus</a></p>
-</footer><!-- /.post-info --><p>上一次我们讨论了<a href="/che/reactor-models-in-aspen-plus-rstoic.html">Aspen Plus中的转化率反应器RStoic</a>，今天我们来研究下平衡反应器REquil。</p>
-<h2>REquil的原理</h2>
-<p>REquil是基于平衡的反应器，它同时计算相平衡和化学平衡。同时，REquil也允许对未达到化学平衡的反应指定其反应程度（extent）。</p>
-<h2>什么情况下使用REquil？</h2>
-<ul>
-<li>已知化学反应方程式</li>
-<li>部分或所有反应达到化学平衡（未达到化学平衡的反应则需要其反应程度）</li>
-</ul>
-<h2>REquil使用要点</h2>
-<ol>
-<li>如果存在多个化学反应，那么它们应当是独立的，即不存在线性相关。</li>
-<li>REquil可以处理单相或两相反应（不能进行三相计算），相平衡的计算内嵌在化学平衡迭代的内部；</li>
-<li>化学反应假设在气相中发生，除非相态指定为liquid-only；</li>
-<li>化学反应中可以包含固体，相关的要求如下。</li>
-</ol>
-<blockquote>
-<p>Reactions can include conventional solids. REquil treats each participating solid component as a separate pure solid phase, not as a component in a solid solution. Any participating solids must have a free energy of formation (DGSFRM) and enthalpy of formation (DHSFRM), or heat capacity parameters (CPSXP1). REquil can handle only a single CISOLID substream, which contains all conventional solids products.</p>
-<p>REquil can handle conventional solids in the MIXED substream. When the CISOLID substream is present, conventional solid reaction products are placed in this substream; otherwise they are placed in the MIXED substream.</p>
-<p>Solids not participating in reactions, including any nonconventional components, are treated as inert. These solids have no effect on the equilibrium calculations except on the energy balance.</p>
-</blockquote>
-<h2>蒸汽转化制氢反应的进一步研究</h2>
-<p>现在我们重新研究下甲烷蒸汽转化制氢反应。</p>
-<p>实际上，甲烷蒸汽转化制氢可以拆分为两个反应：</p>
-<ul>
-<li>甲烷的蒸汽重整反应（steam reforming）：CH4 + H2O &lt;--&gt; CO + 3H2</li>
-<li>合成气的水气变换反应（water-gas shift reaction）：CO + H2O &lt;--&gt; CO2 + H2</li>
-</ul>
-<p>保持进料条件和RStoic模型相当，假设反应在750 ℃下恒温进行，反应压力0.1013 MPa，使用REquil模型模拟反应达到化学平衡的情况：</p>
-<p><a href="/doc/Steam_Reforming_REquil.bkp">甲烷蒸汽转化制氢REquil模型bkp - Aspen Plus V7.3</a></p>
-<p>模拟计算的平衡产物分布如下：</p>
-<p>CH4    0.07279973<br />
-H2O    50.3631776<br />
-CO2    9.70962215<br />
-H2     69.4912229<br />
-CO     10.2175782</p>
-<p>可见甲烷大部分已经转化，但是变换反应化学平衡的存在，大部分的CO并没有进一步生成CO2。</p>
-<p>为了更好的了解这个反应，我们分析一下不同温度下的化学平衡：</p>
-<p><img alt="甲烷蒸汽转化制氢化学平衡分析" src="/img/steam_methane_reforming_chemical_equilibrium_analysis.png" title="甲烷蒸汽转化制氢化学平衡分析" /></p>
-<p>上图中，K1和K2分别表示蒸汽重整反应和变换反应的化学平衡常数，可以看到，随着温度升高，蒸汽重整反应的化学平衡常数变大，而变换反应的化学平衡常数变小。因此，温度越高，产物中的CH4越少，CO越多，转化越完全。而由于温度越高，转化反应平衡常数越小，产品中CO2的量出现了拐点。</p><p>There are <a href="http://sorayng.github.io/che/reactor-models-in-aspen-plus-requil.html#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+</footer><!-- /.post-info -->                <p>讨论Aspen Plus中的REquil反应器模型</p>
+                <a class="readmore" href="http://sorayng.github.io/che/reactor-models-in-aspen-plus-requil.html">read more</a>
+<p>There are <a href="http://sorayng.github.io/che/reactor-models-in-aspen-plus-requil.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
