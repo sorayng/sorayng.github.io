@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://sorayng.github.io/index.html</loc>
-<lastmod>2014-08-13T10:28:36-00:00</lastmod>
+<lastmod>2014-08-13T11:53:18-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://sorayng.github.io/archives.html</loc>
-<lastmod>2014-08-13T10:28:36-00:00</lastmod>
+<lastmod>2014-08-13T11:53:18-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://sorayng.github.io/tags.html</loc>
-<lastmod>2014-08-13T10:28:36-00:00</lastmod>
+<lastmod>2014-08-13T11:53:18-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://sorayng.github.io/categories.html</loc>
-<lastmod>2014-08-13T10:28:36-00:00</lastmod>
+<lastmod>2014-08-13T11:53:18-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -172,20 +172,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://sorayng.github.io/tag/reactive-distillation.html</loc>
-<lastmod>2014-03-17T12:32:00-00:00</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://sorayng.github.io/tag/gtd.html</loc>
-<lastmod>2014-07-25T12:32:00-00:00</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>http://sorayng.github.io/tag/email.html</loc>
 <lastmod>2014-08-04T15:18:00-00:00</lastmod>
 <changefreq>daily</changefreq>
@@ -200,6 +186,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://sorayng.github.io/tag/milp.html</loc>
+<lastmod>2014-03-11T09:46:00-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://sorayng.github.io/tag/github.html</loc>
 <lastmod>2014-01-23T10:27:00-00:00</lastmod>
 <changefreq>daily</changefreq>
@@ -207,29 +200,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://sorayng.github.io/tag/thunderbird.html</loc>
-<lastmod>2014-08-04T15:18:00-00:00</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://sorayng.github.io/tag/lp.html</loc>
-<lastmod>2014-03-13T17:46:00-00:00</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://sorayng.github.io/tag/decomposition.html</loc>
-<lastmod>2014-03-11T09:46:00-00:00</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>http://sorayng.github.io/tag/milp.html</loc>
-<lastmod>2014-03-11T09:46:00-00:00</lastmod>
+<loc>http://sorayng.github.io/tag/reactive-distillation.html</loc>
+<lastmod>2014-03-17T12:32:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -242,6 +214,34 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://sorayng.github.io/tag/pelican.html</loc>
+<lastmod>2014-03-12T16:28:00-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://sorayng.github.io/tag/gtd.html</loc>
+<lastmod>2014-07-25T12:32:00-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://sorayng.github.io/tag/lp.html</loc>
+<lastmod>2014-03-13T17:46:00-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://sorayng.github.io/tag/thunderbird.html</loc>
+<lastmod>2014-08-04T15:18:00-00:00</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>http://sorayng.github.io/tag/markdown.html</loc>
 <lastmod>2014-08-01T15:31:00-00:00</lastmod>
 <changefreq>daily</changefreq>
@@ -249,8 +249,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://sorayng.github.io/tag/pelican.html</loc>
-<lastmod>2014-03-12T16:28:00-00:00</lastmod>
+<loc>http://sorayng.github.io/tag/decomposition.html</loc>
+<lastmod>2014-03-11T09:46:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
