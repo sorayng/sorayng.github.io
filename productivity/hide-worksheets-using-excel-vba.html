@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>sorayNg OPTimized - Authors</title>
+        <title>通过VBA隐藏Excel工作表</title>
         <link rel="stylesheet" href="http://sorayng.github.io/theme/css/main.css" />
 
         <!--[if IE]>
@@ -16,15 +16,54 @@
                 <nav><ul>
                     <li><a href="http://sorayng.github.io/category/che.html">ChE</a></li>
                     <li><a href="http://sorayng.github.io/category/optimization.html">Optimization</a></li>
-                    <li><a href="http://sorayng.github.io/category/productivity.html">Productivity</a></li>
+                    <li class="active"><a href="http://sorayng.github.io/category/productivity.html">Productivity</a></li>
                     <li><a href="http://sorayng.github.io/category/toys.html">Toys</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
-
 <section id="content" class="body">
-    <h1>Authors on sorayNg OPTimized</h1>        <li><a href="http://sorayng.github.io/author/seanyang.html">seanyang</a> (18)</li>
-</section>
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="http://sorayng.github.io/productivity/hide-worksheets-using-excel-vba.html" rel="bookmark"
+           title="Permalink to 通过VBA隐藏Excel工作表">通过VBA隐藏Excel工作表</a></h1>
+    </header>
 
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-08-18T09:23:00">
+                Mon 18 August 2014
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
+        </address>
+<p>In <a href="http://sorayng.github.io/category/productivity.html">Productivity</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/vba.html">vba</a></p>
+</footer><!-- /.post-info -->      <p>有的时候Excel工具的开发者可能不希望某些工作表被使用者修改或看到，这个时候可以通过VBA隐藏并且加密的方式来进行保护。</p>
+<h2>隐藏工作表方法</h2>
+<ol>
+<li>使用Alt+F11打开VBA工作环境；</li>
+<li>在左侧导航窗格中选中待隐藏的工作表，然后在下方属性面板中将<code>Visible</code>属性的值修改为<code>2-xlSheetVeryHidden</code>；</li>
+<li>从菜单栏中打开<code>工具|VBAProject属性</code>，然后在<code>保护</code>选项卡中勾选<code>查看时锁定工程</code>并设置VBA访问密码。</li>
+</ol>
+<p>如果需要取消隐藏，则需要通过上面设置的密码打开VBA项目，然后将相应工作表<code>Visible</code>属性的值改回<code>-1-xlSheetVisible</code>。</p>
+    </div><!-- /.entry-content -->
+    <div class="comments">
+      <h2>Comments !</h2>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_identifier = "productivity/hide-worksheets-using-excel-vba.html";
+        var disqus_url = "http://sorayng.github.io/productivity/hide-worksheets-using-excel-vba.html";
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://sorayng-gh.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+    </div>
+
+  </article>
+</section>
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>blogroll</h2>
