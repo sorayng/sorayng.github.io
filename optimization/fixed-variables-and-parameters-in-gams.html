@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>sorayNg OPTimized - Optimization</title>
+        <title>GAMS中的固定变量和参数</title>
         <link rel="stylesheet" href="http://sorayng.github.io/theme/css/main.css" />
 
         <!--[if IE]>
@@ -20,10 +20,15 @@
                     <li><a href="http://sorayng.github.io/category/toys.html">Toys</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="http://sorayng.github.io/optimization/fixed-variables-and-parameters-in-gams.html" rel="bookmark"
+           title="Permalink to GAMS中的固定变量和参数">GAMS中的固定变量和参数</a></h1>
+    </header>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="http://sorayng.github.io/optimization/fixed-variables-and-parameters-in-gams.html">GAMS中的固定变量和参数</a></h1>
+    <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2014-09-23T13:30:00">
                 Tue 23 September 2014
@@ -34,7 +39,7 @@
         </address>
 <p>In <a href="http://sorayng.github.io/category/optimization.html">Optimization</a>. </p>
 <p>tags: <a href="http://sorayng.github.io/tag/gams.html">GAMS</a></p>
-</footer><!-- /.post-info --><p>在GAMS中，固定变量（fixed variable）和参数（parameter）的处理方式并不是相同的。一个固定变量并不总是被当作参数来处理，但可以通过设置<code>holdfixed</code>属性来实现固定变量的参数化，从而在求解过程中达到简化模型的目的。</p>
+</footer><!-- /.post-info -->      <p>在GAMS中，固定变量（fixed variable）和参数（parameter）的处理方式并不是相同的。一个固定变量并不总是被当作参数来处理，但可以通过设置<code>holdfixed</code>属性来实现固定变量的参数化，从而在求解过程中达到简化模型的目的。</p>
 <p>如果设置模型属性<code>modelname.holdfixed = 1</code>，那么GAMS在编译的过程中将把固定变量（即变量的上下限相等）从模型中移除。由于编译后模型才被传递到求解器，所以在这种情况下，固定变量是被当作参数来处理的，这与求解器无关。</p>
 <p>GAMS默认情况下，<code>modelname.holdfixed = 0</code>，这时固定变量是否被当作参数来处理由求解器决定，比如conopt并没有将固定变量当作参数来处理。</p>
 <p>要注意的一点是，虽然通过设置<code>holdfixed</code>属性来简化模型，但是这时得不到变量的marginal值，因为求解器并没有看到这些变量。</p>
@@ -71,83 +76,24 @@
 
 
 <p>Reference
-1. <a href="http://support.gams.com/doku.php?id=gams:fixed_variables_vs._parameters_vs._equations">Fixed Variables vs. Parameters vs. Equations</a></p><p>There are <a href="http://sorayng.github.io/optimization/fixed-variables-and-parameters-in-gams.html#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+1. <a href="http://support.gams.com/doku.php?id=gams:fixed_variables_vs._parameters_vs._equations">Fixed Variables vs. Parameters vs. Equations</a></p>
+    </div><!-- /.entry-content -->
+    <div class="comments">
+      <h2>Comments !</h2>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_identifier = "optimization/fixed-variables-and-parameters-in-gams.html";
+        var disqus_url = "http://sorayng.github.io/optimization/fixed-variables-and-parameters-in-gams.html";
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://sorayng-gh.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+    </div>
 
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://sorayng.github.io/optimization/duality-in-linear-programming-part-two.html" rel="bookmark"
-                           title="Permalink to 线性规划的对偶问题（二）">线性规划的对偶问题（二）</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2014-03-13T17:46:00">
-                Thu 13 March 2014
-        </abbr>
-
-        <address class="vcard author">
-                By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
-        </address>
-<p>In <a href="http://sorayng.github.io/category/optimization.html">Optimization</a>. </p>
-<p>tags: <a href="http://sorayng.github.io/tag/lp.html">LP</a><a href="http://sorayng.github.io/tag/dual.html">dual</a></p>
-</footer><!-- /.post-info -->                <p>介绍线性规划（LP）的对偶问题</p>
-                <a class="readmore" href="http://sorayng.github.io/optimization/duality-in-linear-programming-part-two.html">read more</a>
-<p>There are <a href="http://sorayng.github.io/optimization/duality-in-linear-programming-part-two.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://sorayng.github.io/optimization/duality-in-linear-programming-part-one.html" rel="bookmark"
-                           title="Permalink to 线性规划的对偶问题（一）">线性规划的对偶问题（一）</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2014-03-12T14:33:00">
-                Wed 12 March 2014
-        </abbr>
-
-        <address class="vcard author">
-                By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
-        </address>
-<p>In <a href="http://sorayng.github.io/category/optimization.html">Optimization</a>. </p>
-<p>tags: <a href="http://sorayng.github.io/tag/lp.html">LP</a><a href="http://sorayng.github.io/tag/dual.html">dual</a></p>
-</footer><!-- /.post-info -->                <p>介绍线性规划（LP）的对偶问题</p>
-                <a class="readmore" href="http://sorayng.github.io/optimization/duality-in-linear-programming-part-one.html">read more</a>
-<p>There are <a href="http://sorayng.github.io/optimization/duality-in-linear-programming-part-one.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://sorayng.github.io/optimization/Benders-decomposition-for-MILP.html" rel="bookmark"
-                           title="Permalink to MILP的Benders分解方法">MILP的Benders分解方法</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2014-03-11T09:46:00">
-                Tue 11 March 2014
-        </abbr>
-
-        <address class="vcard author">
-                By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
-        </address>
-<p>In <a href="http://sorayng.github.io/category/optimization.html">Optimization</a>. </p>
-<p>tags: <a href="http://sorayng.github.io/tag/milp.html">MILP</a><a href="http://sorayng.github.io/tag/decomposition.html">decomposition</a></p>
-</footer><!-- /.post-info -->                <p>介绍混合整数线性规划（MILP）的Benders分解方法</p>
-                <a class="readmore" href="http://sorayng.github.io/optimization/Benders-decomposition-for-MILP.html">read more</a>
-<p>There are <a href="http://sorayng.github.io/optimization/Benders-decomposition-for-MILP.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-            </ol><!-- /#posts-list -->
-<p class="paginator">
-    Page 1 / 1
-</p>
-            </section><!-- /#content -->
+  </article>
+</section>
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>blogroll</h2>
