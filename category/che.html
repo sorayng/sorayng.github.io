@@ -23,7 +23,62 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://sorayng.github.io/che/transfer-block-in-aspen-plus.html">Aspen Plus中的变量传递模块Transfer</a></h1>
+                    <h1 class="entry-title"><a href="http://sorayng.github.io/che/simulation-of-rankine-cycle-using-aspen-plus.html">使用Aspen Plus模拟朗肯循环</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2014-09-24T14:10:00">
+                Wed 24 September 2014
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
+        </address>
+<p>In <a href="http://sorayng.github.io/category/che.html">ChE</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/aspen-plus.html">Aspen Plus</a></p>
+</footer><!-- /.post-info --><h2>朗肯循环</h2>
+<p>朗肯循环（Rankine cycle）是蒸汽机的基本工作原理，驱动着世界上大约90%的发电过程。</p>
+<p><img alt="朗肯循环示意图" src="/img/rankine_cycle_layout_from_wiki.png" title="朗肯循环示意图" /></p>
+<p>一个基本的朗肯循环包括下面四个步骤：</p>
+<ul>
+<li>状态1到状态2（步骤一）：低压饱和液体（p1）通过泵升压到p2，理想情况下是等熵过程；</li>
+<li>状态2到状态3（步骤二）：高压液体（p2）通过锅炉转化为饱和气体（p2），这是一个定压过程；</li>
+<li>状态3到状态4（步骤三）：高压饱和气体（p2）通过透平对外做功，压力降回p1，理想情况下也是一个等熵过程，注意这是温度也会下降并且出现部分凝液；</li>
+<li>状态4到状态1（步骤四）：低压气液混合物（p1）经过凝汽器冷却为低压饱和液体（p1），这是一个定压过程。</li>
+</ul>
+<p>注意到整个循环过程中仅通过泵对液体提压，所以输入的压缩功很小。主要的能量输入为步骤2中锅炉提供的热量，主要的能量输出为步骤3中透平产生的机械功。步骤4将废热移出。由此可见，整个循环的热力学效率近似为透平做功除以锅炉供热。</p>
+<h2>朗肯循环的Aspen Plus模拟</h2>
+<p>以水为工质，在Aspen Plus对朗肯循环过程进行模拟。</p>
+<p><img alt="使用Aspen Plus模拟朗肯循环" src="/img/rankine_cycle_in_aspen_plus.png" title="使用Aspen Plus模拟朗肯循环" /></p>
+<p>假设p1和p2分别为0.06bar和150bar，对应的饱和温度分别为36.2℃和342.2℃，模拟的结果为：</p>
+<ul>
+<li>锅炉输入的热量为12157.2kW</li>
+<li>透平做功为3522.7kW</li>
+<li>凝汽器移热为8783.8kW</li>
+<li>泵做功为149.4kW</li>
+</ul>
+<p>这个朗肯循环的热效率为 3522.7/12157.2 = 29%。</p>
+<h2>朗肯循环的改进</h2>
+<ol>
+<li>根据卡诺原理，p1和p2相差越大，则朗肯循环效率越高；</li>
+<li>可以增加再热和回热系统；</li>
+<li>找到性质更好的工质，即有机朗肯循环。</li>
+</ol>
+<h2>Reference</h2>
+<ol>
+<li><a href="http://en.wikipedia.org/wiki/Rankine_cycle">Rankine cycle from Wikipedia</a></li>
+</ol><p>There are <a href="http://sorayng.github.io/che/simulation-of-rankine-cycle-using-aspen-plus.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://sorayng.github.io/che/transfer-block-in-aspen-plus.html" rel="bookmark"
+                           title="Permalink to Aspen Plus中的变量传递模块Transfer">Aspen Plus中的变量传递模块Transfer</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2014-08-13T14:14:00">
                 Wed 13 August 2014
@@ -34,18 +89,10 @@
         </address>
 <p>In <a href="http://sorayng.github.io/category/che.html">ChE</a>. </p>
 <p>tags: <a href="http://sorayng.github.io/tag/aspen-plus.html">Aspen Plus</a></p>
-</footer><!-- /.post-info --><p>Aspen Plus中有一个很好用的流程模拟辅助模块-Transfer。Transfer模块有些类似于Hysys的表格模块，但是只能在流程模拟中传递数据，不能计算数据（如果需要计算的话，可以使用Calculator）。</p>
-<p>在流程使用序贯模块法求解时，transfer模块按照模块的计算顺序进行变量传递，它可以传递的内容包括：</p>
-<ul>
-<li>整个流股的数据</li>
-<li>流股组成和流量</li>
-<li>所有流程中的变量（例如单元的操作参数）</li>
-</ul><p>There are <a href="http://sorayng.github.io/che/transfer-block-in-aspen-plus.html#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+</footer><!-- /.post-info -->                <p>讨论Aspen Plus中的变量传递模块Transfer</p>
+                <a class="readmore" href="http://sorayng.github.io/che/transfer-block-in-aspen-plus.html">read more</a>
+<p>There are <a href="http://sorayng.github.io/che/transfer-block-in-aspen-plus.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>

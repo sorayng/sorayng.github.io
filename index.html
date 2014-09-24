@@ -23,7 +23,62 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://sorayng.github.io/optimization/fixed-variables-and-parameters-in-gams.html">GAMS中的固定变量和参数</a></h1>
+                    <h1 class="entry-title"><a href="http://sorayng.github.io/che/simulation-of-rankine-cycle-using-aspen-plus.html">使用Aspen Plus模拟朗肯循环</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2014-09-24T14:10:00">
+                Wed 24 September 2014
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
+        </address>
+<p>In <a href="http://sorayng.github.io/category/che.html">ChE</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/aspen-plus.html">Aspen Plus</a></p>
+</footer><!-- /.post-info --><h2>朗肯循环</h2>
+<p>朗肯循环（Rankine cycle）是蒸汽机的基本工作原理，驱动着世界上大约90%的发电过程。</p>
+<p><img alt="朗肯循环示意图" src="/img/rankine_cycle_layout_from_wiki.png" title="朗肯循环示意图" /></p>
+<p>一个基本的朗肯循环包括下面四个步骤：</p>
+<ul>
+<li>状态1到状态2（步骤一）：低压饱和液体（p1）通过泵升压到p2，理想情况下是等熵过程；</li>
+<li>状态2到状态3（步骤二）：高压液体（p2）通过锅炉转化为饱和气体（p2），这是一个定压过程；</li>
+<li>状态3到状态4（步骤三）：高压饱和气体（p2）通过透平对外做功，压力降回p1，理想情况下也是一个等熵过程，注意这是温度也会下降并且出现部分凝液；</li>
+<li>状态4到状态1（步骤四）：低压气液混合物（p1）经过凝汽器冷却为低压饱和液体（p1），这是一个定压过程。</li>
+</ul>
+<p>注意到整个循环过程中仅通过泵对液体提压，所以输入的压缩功很小。主要的能量输入为步骤2中锅炉提供的热量，主要的能量输出为步骤3中透平产生的机械功。步骤4将废热移出。由此可见，整个循环的热力学效率近似为透平做功除以锅炉供热。</p>
+<h2>朗肯循环的Aspen Plus模拟</h2>
+<p>以水为工质，在Aspen Plus对朗肯循环过程进行模拟。</p>
+<p><img alt="使用Aspen Plus模拟朗肯循环" src="/img/rankine_cycle_in_aspen_plus.png" title="使用Aspen Plus模拟朗肯循环" /></p>
+<p>假设p1和p2分别为0.06bar和150bar，对应的饱和温度分别为36.2℃和342.2℃，模拟的结果为：</p>
+<ul>
+<li>锅炉输入的热量为12157.2kW</li>
+<li>透平做功为3522.7kW</li>
+<li>凝汽器移热为8783.8kW</li>
+<li>泵做功为149.4kW</li>
+</ul>
+<p>这个朗肯循环的热效率为 3522.7/12157.2 = 29%。</p>
+<h2>朗肯循环的改进</h2>
+<ol>
+<li>根据卡诺原理，p1和p2相差越大，则朗肯循环效率越高；</li>
+<li>可以增加再热和回热系统；</li>
+<li>找到性质更好的工质，即有机朗肯循环。</li>
+</ol>
+<h2>Reference</h2>
+<ol>
+<li><a href="http://en.wikipedia.org/wiki/Rankine_cycle">Rankine cycle from Wikipedia</a></li>
+</ol><p>There are <a href="http://sorayng.github.io/che/simulation-of-rankine-cycle-using-aspen-plus.html#disqus_thread">comments</a>.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://sorayng.github.io/optimization/fixed-variables-and-parameters-in-gams.html" rel="bookmark"
+                           title="Permalink to GAMS中的固定变量和参数">GAMS中的固定变量和参数</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2014-09-23T13:30:00">
                 Tue 23 September 2014
@@ -34,49 +89,10 @@
         </address>
 <p>In <a href="http://sorayng.github.io/category/optimization.html">Optimization</a>. </p>
 <p>tags: <a href="http://sorayng.github.io/tag/gams.html">GAMS</a></p>
-</footer><!-- /.post-info --><p>在GAMS中，固定变量（fixed variable）和参数（parameter）的处理方式并不是相同的。一个固定变量并不总是被当作参数来处理，但可以通过设置<code>holdfixed</code>属性来实现固定变量的参数化，从而在求解过程中达到简化模型的目的。</p>
-<p>如果设置模型属性<code>modelname.holdfixed = 1</code>，那么GAMS在编译的过程中将把固定变量（即变量的上下限相等）从模型中移除。由于编译后模型才被传递到求解器，所以在这种情况下，固定变量是被当作参数来处理的，这与求解器无关。</p>
-<p>GAMS默认情况下，<code>modelname.holdfixed = 0</code>，这时固定变量是否被当作参数来处理由求解器决定，比如conopt并没有将固定变量当作参数来处理。</p>
-<p>要注意的一点是，虽然通过设置<code>holdfixed</code>属性来简化模型，但是这时得不到变量的marginal值，因为求解器并没有看到这些变量。</p>
-<p>可以通过下面的例子来比较固定变量和参数的处理方式：</p>
-<div class="highlight"><pre><span class="o">*</span> <span class="n">begin</span> <span class="n">holdfixed</span><span class="p">.</span><span class="n">gms</span>
-<span class="n">SET</span> <span class="n">J</span> <span class="o">/</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">/</span><span class="p">;</span>
-<span class="n">PARAMETER</span> <span class="nf">a</span><span class="p">(</span><span class="n">J</span><span class="p">);</span>
-<span class="n">a</span><span class="p">(</span><span class="n">J</span><span class="p">)</span> <span class="o">=</span> <span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span>
-<span class="n">VARIABLES</span> <span class="n">x</span><span class="p">(</span><span class="n">J</span><span class="p">),</span><span class="n">z</span><span class="p">;</span>
-<span class="n">EQUATIONS</span> <span class="n">f</span><span class="p">(</span><span class="n">J</span><span class="p">),</span> <span class="n">objdef</span><span class="p">;</span>
-<span class="n">objdef</span><span class="p">..</span> <span class="n">z</span>    <span class="o">=</span><span class="n">e</span><span class="o">=</span> <span class="n">sum</span><span class="p">{</span><span class="n">J</span><span class="p">,</span> <span class="n">power</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="n">J</span><span class="p">)</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">)};</span>
-<span class="n">f</span><span class="p">(</span><span class="n">J</span><span class="p">)</span> <span class="p">..</span>  <span class="n">x</span><span class="p">(</span><span class="n">J</span><span class="p">)</span> <span class="o">=</span><span class="n">e</span><span class="o">=</span> <span class="n">a</span><span class="p">(</span><span class="n">J</span><span class="p">);</span>
-<span class="n">model</span> <span class="n">foo</span> <span class="o">/</span> <span class="n">objdef</span> <span class="o">/</span><span class="p">;</span>
-<span class="n">model</span> <span class="n">bar</span> <span class="o">/</span> <span class="n">objdef</span><span class="p">,</span> <span class="n">f</span> <span class="o">/</span><span class="p">;</span>
-<span class="n">option</span> <span class="n">nlp</span> <span class="o">=</span> <span class="n">conopt</span><span class="p">;</span>
-<span class="o">*</span> <span class="n">this</span> <span class="n">model</span> <span class="n">has</span> <span class="n">many</span> <span class="n">constraints</span><span class="p">,</span> <span class="n">many</span> <span class="n">free</span> <span class="n">variables</span>
-<span class="o">*</span> <span class="n">the</span> <span class="n">solver</span> <span class="n">has</span> <span class="n">freedom</span> <span class="n">in</span> <span class="n">presolving</span><span class="o">/</span><span class="n">removing</span> <span class="n">them</span> <span class="p">(</span><span class="k">if</span> <span class="n">it</span> <span class="n">can</span><span class="p">)</span> <span class="n">or</span> <span class="n">not</span>
-<span class="o">*</span> <span class="n">in</span> <span class="n">the</span> <span class="n">listing</span><span class="p">,</span> <span class="n">the</span> <span class="n">nonzero</span> <span class="n">marginals</span> <span class="n">are</span> <span class="n">on</span> <span class="n">the</span> <span class="n">equation</span> <span class="n">f</span><span class="p">(</span><span class="n">J</span><span class="p">)</span>
-<span class="n">solve</span> <span class="n">bar</span> <span class="n">using</span> <span class="n">nlp</span> <span class="n">minimizing</span> <span class="n">z</span><span class="p">;</span>
-<span class="o">*</span> <span class="n">this</span> <span class="n">model</span> <span class="n">has</span> <span class="n">one</span> <span class="n">constraint</span><span class="p">,</span> <span class="n">many</span> <span class="n">variables</span>
-<span class="o">*</span> <span class="n">the</span> <span class="n">solver</span> <span class="n">has</span> <span class="n">freedom</span> <span class="n">in</span> <span class="n">presolving</span><span class="o">/</span><span class="n">removing</span> <span class="n">them</span> <span class="p">(</span><span class="k">if</span> <span class="n">it</span> <span class="n">can</span><span class="p">)</span> <span class="n">or</span> <span class="n">not</span>
-<span class="o">*</span> <span class="n">in</span> <span class="n">the</span> <span class="n">listing</span><span class="p">,</span> <span class="n">the</span> <span class="n">nonzero</span> <span class="n">marginals</span> <span class="n">are</span> <span class="n">on</span> <span class="n">the</span> <span class="n">variables</span> <span class="n">x</span><span class="p">(</span><span class="n">J</span><span class="p">)</span>
-<span class="n">x</span><span class="p">.</span><span class="n">fx</span><span class="p">(</span><span class="n">J</span><span class="p">)</span> <span class="o">=</span> <span class="n">a</span><span class="p">(</span><span class="n">J</span><span class="p">);</span>
-<span class="n">solve</span> <span class="n">foo</span> <span class="n">using</span> <span class="n">nlp</span> <span class="n">minimizing</span> <span class="n">z</span><span class="p">;</span>
-<span class="o">*</span> <span class="n">with</span> <span class="n">holdfixed</span> <span class="n">on</span><span class="p">,</span> <span class="n">the</span> <span class="n">solver</span> <span class="n">sees</span> <span class="n">only</span> <span class="n">one</span> <span class="n">constraint</span><span class="p">,</span> <span class="n">one</span> <span class="n">variable</span>
-<span class="o">*</span> <span class="n">it</span> <span class="n">doesn</span><span class="err">’</span><span class="n">t</span> <span class="n">even</span> <span class="n">know</span> <span class="n">the</span> <span class="n">variable</span> <span class="n">x</span> <span class="n">exists</span>
-<span class="o">*</span> <span class="n">in</span> <span class="n">the</span> <span class="n">listing</span><span class="p">,</span> <span class="n">you</span> <span class="n">won</span><span class="err">’</span><span class="n">t</span> <span class="n">see</span> <span class="n">any</span> <span class="n">marginals</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span>
-<span class="o">*</span> <span class="n">since</span> <span class="n">the</span> <span class="n">solver</span> <span class="n">never</span> <span class="n">saw</span> <span class="n">x</span>
-<span class="n">x</span><span class="p">.</span><span class="n">m</span><span class="p">(</span><span class="n">J</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="n">foo</span><span class="p">.</span><span class="n">holdfixed</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="n">solve</span> <span class="n">foo</span> <span class="n">using</span> <span class="n">nlp</span> <span class="n">minimizing</span> <span class="n">z</span><span class="p">;</span>
-<span class="o">*</span> <span class="n">end</span> <span class="n">holdfixed</span><span class="p">.</span><span class="n">gms</span>
-</pre></div>
-
-
-<p>Reference
-1. <a href="http://support.gams.com/doku.php?id=gams:fixed_variables_vs._parameters_vs._equations">Fixed Variables vs. Parameters vs. Equations</a></p><p>There are <a href="http://sorayng.github.io/optimization/fixed-variables-and-parameters-in-gams.html#disqus_thread">comments</a>.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+</footer><!-- /.post-info -->                <p>介绍GAMS中的固定变量和参数的区别</p>
+                <a class="readmore" href="http://sorayng.github.io/optimization/fixed-variables-and-parameters-in-gams.html">read more</a>
+<p>There are <a href="http://sorayng.github.io/optimization/fixed-variables-and-parameters-in-gams.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>
@@ -252,28 +268,6 @@
 </footer><!-- /.post-info -->                <p>介绍Aspen Plus电解质模拟中真实组分和表观组分的含义以及他们对模拟结果的影响。</p>
                 <a class="readmore" href="http://sorayng.github.io/che/true-and-apparent-component-of-electrolyte-model-in-aspen-plus.html">read more</a>
 <p>There are <a href="http://sorayng.github.io/che/true-and-apparent-component-of-electrolyte-model-in-aspen-plus.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://sorayng.github.io/productivity/markdown-quick-reference.html" rel="bookmark"
-                           title="Permalink to Markdown语法速查">Markdown语法速查</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2014-08-01T15:31:00">
-                Fri 01 August 2014
-        </abbr>
-
-        <address class="vcard author">
-                By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
-        </address>
-<p>In <a href="http://sorayng.github.io/category/productivity.html">Productivity</a>. </p>
-<p>tags: <a href="http://sorayng.github.io/tag/markdown.html">markdown</a></p>
-</footer><!-- /.post-info -->                <p>Markdown语法速查</p>
-                <a class="readmore" href="http://sorayng.github.io/productivity/markdown-quick-reference.html">read more</a>
-<p>There are <a href="http://sorayng.github.io/productivity/markdown-quick-reference.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
             </ol><!-- /#posts-list -->
 <p class="paginator">

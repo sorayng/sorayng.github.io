@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>使用Aspen Plus模拟朗肯循环</title>
+        <link rel="stylesheet" href="http://sorayng.github.io/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="http://sorayng.github.io/">sorayNg OPTimized  <strong>Life is Non-OPTimal.</strong></a></h1>
+                <nav><ul>
+                    <li class="active"><a href="http://sorayng.github.io/category/che.html">ChE</a></li>
+                    <li><a href="http://sorayng.github.io/category/optimization.html">Optimization</a></li>
+                    <li><a href="http://sorayng.github.io/category/productivity.html">Productivity</a></li>
+                    <li><a href="http://sorayng.github.io/category/toys.html">Toys</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="http://sorayng.github.io/che/simulation-of-rankine-cycle-using-aspen-plus.html" rel="bookmark"
+           title="Permalink to 使用Aspen Plus模拟朗肯循环">使用Aspen Plus模拟朗肯循环</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2014-09-24T14:10:00">
+                Wed 24 September 2014
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://sorayng.github.io/author/seanyang.html">seanyang</a>
+        </address>
+<p>In <a href="http://sorayng.github.io/category/che.html">ChE</a>. </p>
+<p>tags: <a href="http://sorayng.github.io/tag/aspen-plus.html">Aspen Plus</a></p>
+</footer><!-- /.post-info -->      <h2>朗肯循环</h2>
+<p>朗肯循环（Rankine cycle）是蒸汽机的基本工作原理，驱动着世界上大约90%的发电过程。</p>
+<p><img alt="朗肯循环示意图" src="/img/rankine_cycle_layout_from_wiki.png" title="朗肯循环示意图" /></p>
+<p>一个基本的朗肯循环包括下面四个步骤：</p>
+<ul>
+<li>状态1到状态2（步骤一）：低压饱和液体（p1）通过泵升压到p2，理想情况下是等熵过程；</li>
+<li>状态2到状态3（步骤二）：高压液体（p2）通过锅炉转化为饱和气体（p2），这是一个定压过程；</li>
+<li>状态3到状态4（步骤三）：高压饱和气体（p2）通过透平对外做功，压力降回p1，理想情况下也是一个等熵过程，注意这是温度也会下降并且出现部分凝液；</li>
+<li>状态4到状态1（步骤四）：低压气液混合物（p1）经过凝汽器冷却为低压饱和液体（p1），这是一个定压过程。</li>
+</ul>
+<p>注意到整个循环过程中仅通过泵对液体提压，所以输入的压缩功很小。主要的能量输入为步骤2中锅炉提供的热量，主要的能量输出为步骤3中透平产生的机械功。步骤4将废热移出。由此可见，整个循环的热力学效率近似为透平做功除以锅炉供热。</p>
+<h2>朗肯循环的Aspen Plus模拟</h2>
+<p>以水为工质，在Aspen Plus对朗肯循环过程进行模拟。</p>
+<p><img alt="使用Aspen Plus模拟朗肯循环" src="/img/rankine_cycle_in_aspen_plus.png" title="使用Aspen Plus模拟朗肯循环" /></p>
+<p>假设p1和p2分别为0.06bar和150bar，对应的饱和温度分别为36.2℃和342.2℃，模拟的结果为：</p>
+<ul>
+<li>锅炉输入的热量为12157.2kW</li>
+<li>透平做功为3522.7kW</li>
+<li>凝汽器移热为8783.8kW</li>
+<li>泵做功为149.4kW</li>
+</ul>
+<p>这个朗肯循环的热效率为 3522.7/12157.2 = 29%。</p>
+<h2>朗肯循环的改进</h2>
+<ol>
+<li>根据卡诺原理，p1和p2相差越大，则朗肯循环效率越高；</li>
+<li>可以增加再热和回热系统；</li>
+<li>找到性质更好的工质，即有机朗肯循环。</li>
+</ol>
+<h2>Reference</h2>
+<ol>
+<li><a href="http://en.wikipedia.org/wiki/Rankine_cycle">Rankine cycle from Wikipedia</a></li>
+</ol>
+    </div><!-- /.entry-content -->
+    <div class="comments">
+      <h2>Comments !</h2>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_identifier = "che/simulation-of-rankine-cycle-using-aspen-plus.html";
+        var disqus_url = "http://sorayng.github.io/che/simulation-of-rankine-cycle-using-aspen-plus.html";
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://sorayng-gh.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+    </div>
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://github.com/sorayng/">GitHub</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Technical notes about optimization (algorithms, GAMS, etc.), chemical engineering (models, Aspen Plus, Hysys, etc.) and other interesting stuff. Email me: seanyang#gmx.com
+                </address><!-- /#about -->
+
+                <p>Proudly powered by <a href="http://getpelican.com/">Pelican</a>.</p>
+                <p>The theme is originally by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a> and modified by <a href="http://sorayng.github.io/">me</a>.</p>
+        </footer><!-- /#contentinfo -->
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'sorayng-gh';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</body>
+</html>
